@@ -1,0 +1,83 @@
+@import '../../../assets/scss/media.scss';
+
+@property --num {
+    syntax: "<integer>";
+    initial-value: 0;
+    inherits: false;
+}
+
+.profile {
+    margin-top: 5rem;
+
+    @include breakpoint(small) {
+        margin-top: 22rem;
+    }
+
+    .container {
+        @include breakpoint (xsmall) {
+            flex-direction: column;
+        }
+    }
+
+    &__avatar {
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+        }
+
+        img {
+            width: 25rem;
+
+            @include breakpoint(small) {
+                width: 100%;
+            }
+        }
+    }
+
+    &__about {
+        opacity: 0;
+        animation-delay: 0.3s;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    &__textContent {
+        h1 {
+            font-size: 2rem;
+            line-height: 3rem;
+        }
+    }
+
+    &__statistics {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // gap: 1rem;
+
+        span {
+            &.counting {
+                animation: counter 5s alternate ease-in-out;
+                animation-fill-mode: forwards;
+                counter-reset: num var(--num);
+                font: 800 40px system-ui;
+
+                &::after {
+                    content: counter(num);
+                }
+            }
+        }
+    }
+}
+
+@keyframes counter {
+    from {
+        --num: 0;
+    }
+
+    to {
+        --num: 100;
+    }
+}

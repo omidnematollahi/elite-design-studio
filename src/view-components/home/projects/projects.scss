@@ -1,0 +1,47 @@
+@import '../../../assets/scss/media.scss';
+
+.projects-section {
+    height: 100vh;
+    opacity: 0;
+
+    @include breakpoint(small) {
+        margin-top: 22rem;
+    }
+
+    &.visible {
+        opacity: 1;
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    &__content {
+        display: flex;
+        overflow-x: scroll;
+        height: 100%;
+        width: 100%;
+        padding: 20px 0;
+        margin-top: 60px;
+
+        &::-webkit-scrollbar {
+            width: 0px;
+        }
+    }
+
+    .card {
+        flex-shrink: 0;
+        width: 50%;
+        height: 70%;
+        border-radius: 10px;
+        margin-left: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+
+        @include breakpoint(xsmall) {
+            width: 100%;
+        }
+    }
+
+}

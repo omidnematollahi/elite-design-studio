@@ -1,0 +1,235 @@
+@import '../../assets/scss/media.scss';
+
+.about {
+    height: 100%;
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 0 auto;
+        max-width: 60%;
+        text-align: center;
+
+        @include breakpoint(small) {
+            padding: 5px 10px;
+            max-width: 100%;
+        }
+
+        h1 {
+            line-height: 3rem;
+        }
+
+        p {
+            font-size: 1.25rem;
+            line-height: 2.2rem;
+        }
+    }
+
+    &__mission {
+        min-height: 474px;
+        background-image: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/mission.png');
+        background-size: cover;
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+
+        @include breakpoint(small) {
+            padding: 10px;
+            max-width: 100%;
+        }
+
+        &-text {
+            max-width: 60%;
+            padding: 2rem;
+            margin: 0 auto;
+            color: #ffffff;
+            text-align: center;
+            border: 1px solid #ffffff;
+
+
+            @include breakpoint(small) {
+                padding: 5px 10px;
+                max-width: 100%;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+
+            p {
+                font-size: 1.2rem;
+                line-height: 2rem;
+            }
+        }
+    }
+
+    &__values {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 3rem;
+        margin: 0 auto;
+        max-width: 70%;
+        text-align: center;
+
+        @include breakpoint(small) {
+            padding: 5px 10px;
+            max-width: 100%;
+        }
+    }
+
+    &__title {
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    &__text {
+        text-align: center;
+        opacity: 0;
+
+        &.visible {
+            opacity: 1;
+        }
+    }
+
+    &__benefits {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 2rem;
+        padding: 3rem;
+
+        .about__title {
+            margin: 0;
+            padding: 2rem 0;
+            border-bottom: 1px solid;
+        }
+
+        @include breakpoint(small) {
+            padding: 5px 10px;
+            flex-direction: column;
+        }
+    }
+
+    &__integrity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 48%;
+        padding: 0 1rem;
+    }
+
+    &__cooperation {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 48%;
+        padding: 0 1rem;
+    }
+
+    &__creativity {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 48%;
+        padding: 0 1rem;
+    }
+
+    &__support {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        flex-basis: 48%;
+        padding: 0 1rem;
+    }
+
+    &__why {
+        h1 {
+            text-align: center;
+            font-size: 3rem;
+            margin: 4rem 0;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #ffffff;
+        }
+    }
+
+    .why-box {
+        width: 100%;
+        height: 100vh;
+        background-size: cover;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 0 20%;
+
+        .image {
+            opacity: 0;
+
+            &.visible {
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            color: #ffffff;
+            line-height: 3rem;
+            opacity: 0;
+
+
+            @include breakpoint(small) {
+                line-height: 4rem;
+            }
+
+            &.visible {
+                animation: text-clip 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+                opacity: 1;
+            }
+        }
+
+        p {
+            opacity: 0;
+
+            &.visible {
+                animation: text-clip 1s cubic-bezier(0.5, 0, 0.1, 1) both;
+                opacity: 1;
+            }
+        }
+    }
+
+    &__quality {
+        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/interior-design1.jpg') no-repeat center center fixed;
+    }
+
+    &__projects {
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/interior-design2.jpg') no-repeat center center fixed;
+    }
+
+    &__supportive {
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/interior-design3.jpg') no-repeat center center fixed;
+    }
+
+    &__rate {
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/interior-design1.jpg') no-repeat center center fixed;
+    }
+
+    &__review {
+        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/interior-design2.jpg') no-repeat center center fixed;
+    }
+}

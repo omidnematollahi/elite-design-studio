@@ -1,0 +1,122 @@
+@import url('../../assets/scss/media.scss');
+.home {
+    height: 100%;
+    width: 100%;
+
+    h1 {
+        font-size: 3rem;
+        line-height: 4rem;
+        text-align: center;
+    }
+
+    &__secondSection {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__firstSection {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__animatedText {
+        h1 {
+            max-width: 40ch;
+            text-align: center;
+            transform: scale(0.94);
+            animation: scale 2s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        }
+
+        span {
+            display: inline-block;
+            opacity: 0;
+            margin-left: 10px;
+            filter: blur(0px);
+        }
+
+        span:nth-child(1) {
+            animation: fadeIn 0.8s 0.1s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        }
+
+        span:nth-child(2) {
+            animation: fadeIn 0.8s 0.2s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        }
+
+        span:nth-child(3) {
+            animation: fadeIn 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        }
+    }
+
+    &__banner {
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+
+        &__drop {
+            z-index: 1;
+            background: #ffffff;
+            transition: max-height 1s ease-in-out;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: 0;
+            bottom: 0;
+            transform: scaleY(1);
+            transition: transform 1s;
+            transition-timing-function: ease-in-out;
+            transform-origin: top;
+
+            &.covered {
+                transform: scaleY(0);
+            }
+        }
+
+        &__image {
+            height: 100%;
+            width: 100%;
+            background-color: rgba($color: #000000, $alpha: 0.5);
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('../../assets/images/home_banner.png');
+            background-attachment: fixed;
+            // filter: grayscale(40%);
+            // filter: sepia(0%) hue-rotate(190deg) saturate(100%);
+            background-size: cover;
+            background-position: 50% 100%;
+            background-repeat: no-repeat;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: #ffffff;
+            z-index: 1;
+        }
+    }
+}
+
+@keyframes scale {
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeIn {
+    100% {
+        opacity: 1;
+        filter: blur(0);
+    }
+}
+
+.animate__animated {
+    opacity: 1 !important;
+}
+
+.square {
+    width: 50px;
+    height: 50px;
+    background-color: red;
+}

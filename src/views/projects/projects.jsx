@@ -139,6 +139,14 @@ function Projects() {
       image: theTwentieForthImage,
       title: 'image24',
     },
+    {
+      image: theTwentieFifthImage,
+      title: 'image25',
+    },
+    {
+      image: theTwentieSixthImage,
+      title: 'image26',
+    },
   ];
   const elementsRef = useRef(data.map(() => createRef()));
   const elementsAreInViewport = [];

@@ -7,7 +7,7 @@ import firstImage from '@/assets/images/projects/1-min.jpg';
 import secondImage from '@/assets/images/projects/2-min.jpg';
 import thirdImage from '@/assets/images/projects/3-min.jpg';
 import forthImage from '@/assets/images/projects/4-min.jpg';
-import fifthImage from '@/assets/images/projects/5-min.JPG';
+import fifthImage from '@/assets/images/projects/5-min.jpg';
 import sixthImage from '@/assets/images/projects/6-min.JPG';
 import seventhImage from '@/assets/images/projects/7-min.JPG';
 import eigthImage from '@/assets/images/projects/8-min.JPG';

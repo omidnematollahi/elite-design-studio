@@ -2,14 +2,14 @@ import { useRef } from 'react';
 
 import './about.scss';
 
-import SlideShow from '../../view-components/contact/slideshow';
-import firstImage from '../../assets/images/contact/5.JPG';
-import secondImage from '../../assets/images/contact/6.JPG';
-import thirdImage from '../../assets/images/contact/7.JPG';
-import forthImage from '../../assets/images/contact/8.JPG';
-import Footer from '../../components/footer/footer';
+import SlideShow from '@/view-components/contact/slideshow';
+import firstImage from '@/assets/images/contact/5.JPG';
+import secondImage from '@/assets/images/contact/6.JPG';
+import thirdImage from '@/assets/images/contact/7.JPG';
+import forthImage from '@/assets/images/contact/8.JPG';
+import Footer from '@/components/footer/footer';
 
-import useIntersection from '../../custom-hooks/useIntersection';
+import useIntersection from '@/custom-hooks/useIntersection';
 
 function About() {
   const valuesTitleRef = useRef(null);

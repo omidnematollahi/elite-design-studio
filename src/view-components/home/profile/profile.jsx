@@ -1,4 +1,4 @@
-import personalPicture from '../../../assets/images/personal-picture.png';
+import personalPicture from '@/assets/images/personal-picture.png';
 import './profile.scss';
 import Count from '../count/count';
 

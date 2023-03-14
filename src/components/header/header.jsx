@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../../assets/images/logo.png';
+import logo from '@/assets/images/logo.png';
 // import whiteLogo from '../../assets/images/white-logo.png';
 import './header.scss';
 

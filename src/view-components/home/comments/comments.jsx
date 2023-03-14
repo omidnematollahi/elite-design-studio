@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react';
 import { Icon } from '@iconify/react';
 
 import './comments.scss';
-import avatar1 from '../../../assets/images/avatar/avatar1.png';
-import avatar2 from '../../../assets/images/avatar/avatar2.png';
-import avatar3 from '../../../assets/images/avatar/avatar3.png';
+import avatar1 from '@/assets/images/avatar/avatar1.png';
+import avatar2 from '@/assets/images/avatar/avatar2.png';
+import avatar3 from '@/assets/images/avatar/avatar3.png';
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';

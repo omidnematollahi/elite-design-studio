@@ -1,11 +1,11 @@
 import './services.scss';
 
-import SlideShow from '../../view-components/contact/slideshow';
-import firstImage from '../../assets/images/services/service10.jpg';
-import secondImage from '../../assets/images/services/service11.jpg';
-import thirdImage from '../../assets/images/services/service12.jpg';
+import SlideShow from '@/view-components/contact/slideshow';
+import firstImage from '@/assets/images/services/service10.jpg';
+import secondImage from '@/assets/images/services/service11.jpg';
+import thirdImage from '@/assets/images/services/service12.jpg';
 import { useState } from 'react';
-import Footer from '../../components/footer/footer';
+import Footer from '@/components/footer/footer';
 
 function Services() {
   const [activeIndex, setActiveIndex] = useState(0);

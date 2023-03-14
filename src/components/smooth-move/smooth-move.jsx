@@ -1,6 +1,6 @@
 import './smooth-move.scss';
 import { useRef, useEffect } from 'react';
-import firstTimeLogo from '../../assets/images/logo.jpeg';
+import firstTimeLogo from '@/assets/images/logo.jpeg';
 
 export default function SmoothMove() {
   const logoRef = useRef(null);

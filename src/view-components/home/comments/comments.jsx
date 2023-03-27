@@ -10,104 +10,61 @@ import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
 
 export const Comments = ({ toggle }) => {
-  useEffect(() => {
-    console.log($('.testimonial-carousel').length);
-    if ($('.testimonial-carousel').length) {
-      $('.testimonial-carousel').owlCarousel({
-        animateOut: 'slideOutDown',
-        animateIn: 'zoomIn',
-        loop: true,
-        margin: 0,
-        nav: true,
-        smartSpeed: 300,
-        autoplay: 7000,
-        navText: ['<span className="arrow-left"></span>', '<span className="arrow-right"></span>'],
-        responsive: {
-          0: {
-            items: 1,
-          },
-          600: {
-            items: 1,
-          },
-          800: {
-            items: 1,
-          },
-          1024: {
-            items: 1,
-          },
-        },
-      });
-    }
-  }, []);
+  useEffect(() => {}, []);
   return (
     <div className={`comments ${toggle ? 'toggled animate__animated animate__slideInUp' : ''}`}>
-      <section className="testimonial-section">
-        <div className="large-container">
-          <div className="sec-title">
-            <span className="title">Testimonial</span>
-            <h2>What Our core client say ?</h2>
+      <div className="testimonials-section">
+        <input type="radio" name="slider" title="slide1" checked="checked" readOnly className="slider__nav" />
+        <input type="radio" name="slider" title="slide2" className="slider__nav" />
+        <input type="radio" name="slider" title="slide3" className="slider__nav" />
+        <input type="radio" name="slider" title="slide4" className="slider__nav" />
+        <input type="radio" name="slider" title="slide5" className="slider__nav" />
+        <div className="slider__inner">
+          <div className="slider__contents">
+            <span className="quote">&rdquo;</span>
+            <p className="slider__txt">
+              We love you guys. It's easy to order, we get shipments quick and my rep solves tough problems
+              the right way. We get answers that work.
+            </p>
+            <h2 className="slider__caption">Rhonda | NylonCraft</h2>
           </div>
-
-          <div className="testimonial-carousel owl-carousel owl-theme">
-            <div className="testimonial-block">
-              <div className="inner-box">
-                <div className="text">
-                  Why is this important? Because clients want to know the businesses they depend on for
-                  advice, are well managed in their own right. Not only that but this event gives you the
-                  chance to give your back-office team
-                </div>
-                <div className="info-box">
-                  <div className="thumb">
-                    <img src="http://t.commonsupport.com/adro/images/resource/thumb-1.jpg" alt="" />
-                  </div>
-                  <h4 className="name">Mahfuz Riad</h4>
-                  <span className="designation">Ui Designer & CEO</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-block">
-              <div className="inner-box">
-                <div className="text">
-                  Why is this important? Because clients want to know the businesses they depend on for
-                  advice, are well managed in their own right. Not only that but this event gives you the
-                  chance to give your back-office team
-                </div>
-                <div className="info-box">
-                  <div className="thumb">
-                    <img src="http://t.commonsupport.com/adro/images/resource/thumb-1.jpg" alt="" />
-                  </div>
-                  <h4 className="name">Mahfuz Riad</h4>
-                  <span className="designation">Ui Designer & CEO</span>
-                </div>
-              </div>
-            </div>
-
-            <div className="testimonial-block">
-              <div className="inner-box">
-                <div className="text">
-                  Why is this important? Because clients want to know the businesses they depend on for
-                  advice, are well managed in their own right. Not only that but this event gives you the
-                  chance to give your back-office team
-                </div>
-                <div className="info-box">
-                  <div className="thumb">
-                    <img src="http://t.commonsupport.com/adro/images/resource/thumb-1.jpg" alt="" />
-                  </div>
-                  <h4 className="name">Mahfuz Riad</h4>
-                  <span className="designation">Ui Designer & CEO</span>
-                </div>
-              </div>
-            </div>
+          <div className="slider__contents">
+            <span className="quote">&rdquo;</span>
+            <p className="slider__txt">
+              You all bend over backwards to get it done. Inside sales and the Account Managers are great!
+              It's your service...you all know that it's not just about taking orders it's about service. Why
+              do we choose you guys - your people, your prices, you're quick and you have a ton of technical
+              knowledge.
+            </p>
+            <h2 className="slider__caption">Jared | Rexam</h2>
           </div>
-
-          <div className="thumb-layer paroller">
-            <figure className="image">
-              <img src="http://t.commonsupport.com/adro/images/resource/user-thumbs.png" alt="" />
-            </figure>
+          <div className="slider__contents">
+            <span className="quote">&rdquo;</span>
+            <p className="slider__txt">
+              It's the long-term relationship we have with Proheat that keeps me calling you guys. I trust
+              you, you're quick, and everybody I've ever spoken to there are all great people. Our CEO, Bill,
+              talks about building relationships. That's exactly what Proheat does, and I couldn't be happier.
+            </p>
+            <h2 className="slider__caption">Chris | C&M Fine Pack</h2>
+          </div>
+          <div className="slider__contents">
+            <span className="quote">&rdquo;</span>
+            <p className="slider__txt">
+              You answer my questions, always takes care of problems, and I never have a hassle.
+            </p>
+            <h2 className="slider__caption">Rex | LNP Engineering Plastics</h2>
+          </div>
+          <div className="slider__contents">
+            <span className="quote">&rdquo;</span>
+            <p className="slider__txt">
+              Proheat's staff are all so friendly and everybody goes above and beyond. Everyone is courteous,
+              everything is quick and you get us what we need. I have to shop around for everything and we
+              ALWAYS come back to Proheat.
+            </p>
+            <h2 className="slider__caption">Darlene | Russel Stover</h2>
           </div>
         </div>
-      </section>
+      </div>
 
       {/* <section className="testimonials">
         <h1>Testimonials</h1>

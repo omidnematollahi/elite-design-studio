@@ -8,6 +8,9 @@
 
 .profile {
     margin-top: 5rem;
+    height: 100vh;
+    display: flex;
+    align-items: center;
 
     @include breakpoint(small) {
         margin-top: 22rem;
@@ -28,6 +31,11 @@
 
         img {
             width: 25rem;
+            object-fit: fill;
+
+            @include breakpoint(medium) {
+                width: 17rem;
+            }
 
             @include breakpoint(small) {
                 width: 100%;

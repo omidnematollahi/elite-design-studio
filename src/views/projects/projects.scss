@@ -15,6 +15,7 @@
 
     &__item {
         opacity: 0;
+        overflow: hidden;
 
         &.visible {
             opacity: 1;

@@ -15,10 +15,10 @@ function Home() {
   const projectsRef = useRef(null);
   const commentsRef = useRef(null);
   const footerRef = useRef(null);
-  const profileIsInViewport = !isMobile ? useIntersection(profileRef, '-300px') : true;
-  const projectsIsInViewport = !isMobile ? useIntersection(projectsRef, '-300px') : true;
-  const commentsIsInViewport = !isMobile ? useIntersection(commentsRef, '-300px') : true;
-  // const footerIsInViewport = useIntersection(footerRef, '0');
+  const profileIsInViewport = useIntersection(profileRef);
+  const projectsIsInViewport = useIntersection(projectsRef);
+  const commentsIsInViewport = useIntersection(commentsRef);
+  const footerIsInViewport = useIntersection(footerRef);
 
   useEffect(() => {
     setTimeout(() => {
@@ -61,7 +61,7 @@ function Home() {
         <Comments toggle={commentsIsInViewport}></Comments>
       </div>
       <div className="home__footer" ref={footerRef}>
-        <Footer></Footer>
+        <Footer toggle={footerIsInViewport}></Footer>
       </div>
     </div>
   );

@@ -1,4 +1,4 @@
-import personalPicture from '@/assets/images/personal-picture.png';
+import personalPicture from '@/assets/images/personal-picture.jpeg';
 import './profile.scss';
 import Count from '../count/count';
 
@@ -22,8 +22,8 @@ export function Profile({ toggle }) {
   ];
   return (
     <div className="profile">
+      {toggle}
       <div className="container">
-        {toggle}
         <div className={`profile__avatar ${toggle ? 'visible animate__animated animate__slideInUp' : ''}`}>
           <img src={personalPicture} />
         </div>

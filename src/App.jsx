@@ -15,17 +15,16 @@ const SmoothMove = React.lazy(() => import('./components/smooth-move/smooth-move
 function App() {
   const navigate = useNavigate();
   const [siteLoaded, setSiteLoaded] = useState(false);
-  const [loadingStatus, setLoadingStatus] = useState(localStorage.getItem('firstAnimationVisited'));
+  const [loadingStatus, setLoadingStatus] = useState(sessionStorage.getItem('firstAnimationVisited'));
 
   useEffect(() => {
     setTimeout(() => {
       setSiteLoaded(true);
-      localStorage.setItem('firstAnimationVisited', siteLoaded);
+      sessionStorage.setItem('firstAnimationVisited', siteLoaded);
     }, 9000);
   }, []);
 
   useEffect(() => {
-    console.log(Boolean(loadingStatus));
     if (Boolean(loadingStatus)) {
       setSiteLoaded(true);
     }

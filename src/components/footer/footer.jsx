@@ -5,7 +5,7 @@ import './footer.scss';
 
 export function Footer({ toggle }) {
   return (
-    <div className={`footer ${toggle ? 'toggled' : ''}`}>
+    <div className={`footer ${toggle ? 'visible animate__animated animate__slideInUp' : ''}`}>
       <div className="footer__menu">
         <ul>
           <li>

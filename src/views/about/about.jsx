@@ -37,31 +37,33 @@ function About() {
   const reviewImageRef = useRef(null);
   const reviewHeadingRef = useRef(null);
   const reviewParagraphRef = useRef(null);
-  const valuesTitleIsInViewport = useIntersection(valuesTitleRef, '-100px');
-  const valuesDescriptionIsInViewport = useIntersection(valuesDescriptionRef, '-100px');
-  const integrityIsInViewport = useIntersection(intergrityRef, '-100px');
-  const integrityTextIsInViewport = useIntersection(intergrityTextRef, '-100px');
-  const cooperationIsInViewport = useIntersection(cooperationRef, '-100px');
-  const cooperationTextIsInViewport = useIntersection(cooperationTextRef, '-100px');
-  const creativityIsInViewport = useIntersection(creativityRef, '-100px');
-  const creativityTextIsInViewport = useIntersection(creativityTextRef, '-100px');
-  const supportIsInViewport = useIntersection(supportRef, '-100px');
-  const supportTextIsInViewport = useIntersection(supportTextRef, '-100px');
-  const qualityImageIsInViewport = useIntersection(qualityImageRef, '-100px');
-  const qualityHeadingIsInViewport = useIntersection(qualityHeadingRef, '-100px');
-  const qualityParagraphIsInViewport = useIntersection(qualityParagraphRef, '-100px');
-  const projectsImageIsInViewport = useIntersection(projectsImageRef, '-100px');
-  const projectsHeadingIsInViewport = useIntersection(projectsHeadingRef, '-100px');
-  const projectsParagraphIsInViewport = useIntersection(projectsParagraphRef, '-100px');
-  const supportiveImageIsInViewport = useIntersection(supportiveImageRef, '-100px');
-  const supportiveHeadingIsInViewport = useIntersection(supportiveHeadingRef, '-100px');
-  const supportiveParagraphIsInViewport = useIntersection(supportiveParagraphRef, '-100px');
-  const rateImageIsInViewport = useIntersection(rateImageRef, '-100px');
-  const rateHeadingIsInViewport = useIntersection(rateHeadingRef, '-100px');
-  const rateParagraphIsInViewport = useIntersection(rateParagraphRef, '-100px');
-  const reviewImageIsInViewport = useIntersection(reviewImageRef, '-100px');
-  const reviewHeadingIsInViewport = useIntersection(reviewHeadingRef, '-100px');
-  const reviewParagraphIsInViewport = useIntersection(reviewParagraphRef, '-100px');
+  const footerRef = useRef(null);
+  const valuesTitleIsInViewport = useIntersection(valuesTitleRef);
+  const valuesDescriptionIsInViewport = useIntersection(valuesDescriptionRef);
+  const integrityIsInViewport = useIntersection(intergrityRef);
+  const integrityTextIsInViewport = useIntersection(intergrityTextRef);
+  const cooperationIsInViewport = useIntersection(cooperationRef);
+  const cooperationTextIsInViewport = useIntersection(cooperationTextRef);
+  const creativityIsInViewport = useIntersection(creativityRef);
+  const creativityTextIsInViewport = useIntersection(creativityTextRef);
+  const supportIsInViewport = useIntersection(supportRef);
+  const supportTextIsInViewport = useIntersection(supportTextRef);
+  const qualityImageIsInViewport = useIntersection(qualityImageRef);
+  const qualityHeadingIsInViewport = useIntersection(qualityHeadingRef);
+  const qualityParagraphIsInViewport = useIntersection(qualityParagraphRef);
+  const projectsImageIsInViewport = useIntersection(projectsImageRef);
+  const projectsHeadingIsInViewport = useIntersection(projectsHeadingRef);
+  const projectsParagraphIsInViewport = useIntersection(projectsParagraphRef);
+  const supportiveImageIsInViewport = useIntersection(supportiveImageRef);
+  const supportiveHeadingIsInViewport = useIntersection(supportiveHeadingRef);
+  const supportiveParagraphIsInViewport = useIntersection(supportiveParagraphRef);
+  const rateImageIsInViewport = useIntersection(rateImageRef);
+  const rateHeadingIsInViewport = useIntersection(rateHeadingRef);
+  const rateParagraphIsInViewport = useIntersection(rateParagraphRef);
+  const reviewImageIsInViewport = useIntersection(reviewImageRef);
+  const reviewHeadingIsInViewport = useIntersection(reviewHeadingRef);
+  const reviewParagraphIsInViewport = useIntersection(reviewParagraphRef);
+  const footerIsInViewport = useIntersection(footerRef);
   const slides = [
     {
       image: firstImage,
@@ -413,7 +415,9 @@ function About() {
           </p>
         </div>
       </section>
-      <Footer></Footer>
+      <div ref={footerRef}>
+        <Footer toggle={footerIsInViewport}></Footer>
+      </div>
     </div>
   );
 }

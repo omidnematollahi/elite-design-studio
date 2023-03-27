@@ -6,7 +6,6 @@ export default function SmoothMove() {
   const logoRef = useRef(null);
   useEffect(() => {
     setTimeout(() => {
-      console.log(logoRef);
       if (logoRef) {
         logoRef.current.classList.add('move');
       }

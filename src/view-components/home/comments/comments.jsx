@@ -22,24 +22,24 @@ export const Comments = ({ toggle }) => {
   };
   return (
     <div className={`comments ${toggle ? 'toggled animate__animated animate__slideInUp' : ''}`}>
-      <h2 className="comments__heading">Testemonials</h2>
+      <h2 className="comments__heading">Testimonials</h2>
       <Slider {...settings}>
         <div className="comments__slide">
           <img src={avatar1} />
         </div>
-        <div className="commnets__slide">
+        <div className="comments__slide">
           <img src={avatar2} />
         </div>
-        <div className="commnets__slide">
+        <div className="comments__slide">
           <img src={avatar3} />
         </div>
-        <div className="commnets__slide">
+        <div className="comments__slide">
           <img src={avatar4} />
         </div>
-        <div className="commnets__slide">
+        <div className="comments__slide">
           <img src={avatar3} />
         </div>
-        <div className="commnets__slide">
+        <div className="comments__slide">
           <img src={avatar4} />
         </div>
       </Slider>

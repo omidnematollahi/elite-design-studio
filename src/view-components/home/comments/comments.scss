@@ -1,20 +1,23 @@
 .comments {
-    opacity: 0;
+  opacity: 0;
+  width: 100%;
+  padding: 0;
+  margin: 0;
 
-    &.toggle {
-        opacity: 1;
+  &.toggle {
+    opacity: 1;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      width: 100px;
     }
-
-    &__slide {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-
-        img {
-            width: 100px;
-        }
-    }
+  }
 }
 
 // .testimonials-section {

@@ -19,20 +19,6 @@ import theThirteenthImage from '@/assets/images/projects/13-min.JPG';
 import theForteenthImage from '@/assets/images/projects/14-min.JPG';
 import theFifteenthImage from '@/assets/images/projects/15-min.JPG';
 import theSixteenthImage from '@/assets/images/projects/16-min.JPG';
-import theSeventeenthImage from '@/assets/images/projects/17-min.JPG';
-import theEighteenthImage from '@/assets/images/projects/18-min.JPG';
-import theNineteenthImage from '@/assets/images/projects/19-min.JPG';
-import theTwentiethImage from '@/assets/images/projects/20-min.JPG';
-import theTwentieFirstImage from '@/assets/images/projects/21-min.JPG';
-import theTwentieSecondImage from '@/assets/images/projects/22-min.JPG';
-import theTwentieThirdImage from '@/assets/images/projects/23-min.JPG';
-import theTwentieForthImage from '@/assets/images/projects/24-min.JPG';
-import theTwentieFifthImage from '@/assets/images/projects/25-min.JPG';
-import theTwentieSixthImage from '@/assets/images/projects/26-min.JPG';
-import theTwentieSeventhImage from '@/assets/images/projects/27-min.JPG';
-import theTwentieEighthImage from '@/assets/images/projects/28-min.JPG';
-import theTwentieNinthImage from '@/assets/images/projects/29-min.JPG';
-import theThirteenImage from '@/assets/images/projects/30-min.JPG';
 
 import { useHorizontalScroll } from '@/custom-hooks/useHorizontalScroll';
 
@@ -61,21 +47,6 @@ const projectsList = [
   theForteenthImage,
   theFifteenthImage,
   theSixteenthImage,
-  theSeventeenthImage,
-  theEighteenthImage,
-  theNineteenthImage,
-  theTwentiethImage,
-  theThirteenthImage,
-  theTwentieFirstImage,
-  theTwentieSecondImage,
-  theTwentieThirdImage,
-  theTwentieForthImage,
-  theTwentieFifthImage,
-  theTwentieSixthImage,
-  theTwentieSeventhImage,
-  theTwentieEighthImage,
-  theTwentieNinthImage,
-  theThirteenImage,
 ];
 export function Projects({ toggle }) {
   const scrollRef = useHorizontalScroll();

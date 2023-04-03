@@ -1,7 +1,7 @@
 .comments {
   opacity: 0;
   width: 100%;
-  padding: 0;
+  padding: 0 2rem;
   margin: 0;
 
   &.toggle {
@@ -9,15 +9,49 @@
   }
 
   &__slide {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+
+    &__content {
+      padding: 1rem;
+      display: flex !important;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
 
     img {
       width: 100px;
     }
   }
+}
+
+.slick-prev {
+  &::before {
+    color: black;
+  }
+}
+
+.slick-next:before {
+  content: "→" !important;
+  color: black !important;
+}
+
+.slick-prev:before {
+  content: "←" !important;
+  color: black !important;
+}
+
+.slick-prev,
+.slick-next {
+  height: 40px;
+  width: 40px;
+  box-shadow: 0 0 2px #aaaaaa;
+}
+
+.slick-next {
+  &::before {
+    color: black;
+  }
+
 }
 
 // .testimonials-section {

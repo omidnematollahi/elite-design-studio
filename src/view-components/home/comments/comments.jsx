@@ -14,33 +14,74 @@ export const Comments = ({ toggle }) => {
   useEffect(() => {}, []);
   const settings = {
     className: 'center',
-    centerMode: true,
+    autoplay: true,
+    arrows: true,
+    // adaptiveHeight: true,
+    centerMode: false,
     infinite: true,
     centerPadding: '60px',
     slidesToShow: 2,
     speed: 500,
+    autoplaySpeed: 10000,
   };
   return (
     <div className={`comments ${toggle ? 'toggled animate__animated animate__slideInUp' : ''}`}>
-      <h2 className="comments__heading">Testimonials</h2>
+      <h1 className="comments__heading">Whaterver good things we build end up building us</h1>
       <Slider {...settings}>
         <div className="comments__slide">
-          <img src={avatar1} />
+          <div className="comments__slide__content">
+            <img src={avatar1} />
+            <p>
+              Ellie is special to work with he understands so much about design, service, and meeting the
+              needs of the client. Great to work with!
+            </p>
+          </div>
         </div>
         <div className="comments__slide">
-          <img src={avatar2} />
+          <div className="comments__slide__content">
+            <img src={avatar2} />
+            <p>
+              Ellie knows her stuff! She keeps it very professional and her work speaks wonders! Thanks guys,
+              for the amazing photorealistic 3D Renders. If you’re looking for a 3D Architectural Rendering,
+              highly recommended her team.
+            </p>
+          </div>
         </div>
         <div className="comments__slide">
-          <img src={avatar3} />
+          <div className="comments__slide__content">
+            <img src={avatar3} />
+            <p>Great experience! Amazing and fast work! They know exactly what I asked for.</p>
+          </div>
         </div>
         <div className="comments__slide">
-          <img src={avatar4} />
+          <div className="comments__slide__content">
+            <img src={avatar4} />
+            <p>
+              Outstanding company! Talented, honest, hardworking and exceeded our expectations. Young company
+              on the move. Highly recommended.
+            </p>
+          </div>
         </div>
         <div className="comments__slide">
-          <img src={avatar3} />
+          <div className="comments__slide__content">
+            <img src={avatar3} />
+            <p>
+              We had the pleasure of working with Elite design studio on our custom home. We collaborated
+              closely with them on the interior design. They also helped with a vision for the landscape and
+              conceptional planning for the property. We are very pleased with the high level of design and
+              service they provide. Highly recommended.
+            </p>
+          </div>
         </div>
         <div className="comments__slide">
-          <img src={avatar4} />
+          <div className="comments__slide__content">
+            <img src={avatar4} />
+            <p>
+              We have hired Ellie to do 360 virtual tour for our new development project. They were able to
+              finish a 50 unit apartment tour within 2 week, everything was correct!! Our whole team and the
+              client were very impressed.
+            </p>
+          </div>
         </div>
       </Slider>
 

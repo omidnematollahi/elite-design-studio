@@ -1,8 +1,12 @@
 import personalPicture from '@/assets/images/personal-picture.jpeg';
 import './profile.scss';
 import Count from '../count/count';
+import { useEffect } from 'react';
 
 export function Profile({ toggle }) {
+  useEffect(() => {
+    console.log(toggle);
+  }, []);
   const counterInfo = [
     {
       label: 'Years of Experience',
@@ -22,7 +26,6 @@ export function Profile({ toggle }) {
   ];
   return (
     <div className="profile">
-      {toggle}
       <div className="container">
         <div className={`profile__avatar ${toggle ? 'visible animate__animated animate__slideInUp' : ''}`}>
           <img src={personalPicture} />

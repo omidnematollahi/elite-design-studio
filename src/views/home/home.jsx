@@ -15,12 +15,13 @@ function Home() {
   const projectsRef = useRef(null);
   const commentsRef = useRef(null);
   const footerRef = useRef(null);
-  const profileIsInViewport = useIntersection(profileRef);
+  const profileIsInViewport = useIntersection(profileRef, '300px');
   const projectsIsInViewport = useIntersection(projectsRef);
   const commentsIsInViewport = useIntersection(commentsRef);
   const footerIsInViewport = useIntersection(footerRef);
 
   useEffect(() => {
+    console.log(profileRef);
     setTimeout(() => {
       setFirstLoad(true);
       setTimeout(() => {

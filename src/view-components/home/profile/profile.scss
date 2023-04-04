@@ -32,6 +32,7 @@
         img {
             width: 25rem;
             object-fit: fill;
+            border-radius: 1rem;
 
             @include breakpoint(medium) {
                 width: 17rem;

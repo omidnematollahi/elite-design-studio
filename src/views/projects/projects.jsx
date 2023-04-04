@@ -94,6 +94,8 @@ function Projects() {
       title: 'image15',
     },
   ];
+  const footerRef = useRef(null);
+  const footerIsInViewport = useIntersection(footerRef);
   const elementsRef = useRef(data.map(() => createRef()));
   const elementsAreInViewport = [];
   elementsRef.current.forEach((elementRef, index) => {
@@ -141,7 +143,9 @@ function Projects() {
           })}
         </Masonry>
       </div>
-      <Footer></Footer>
+      <div className="home__footer" ref={footerRef}>
+        <Footer toggle={footerIsInViewport}></Footer>
+      </div>
     </div>
   );
 }

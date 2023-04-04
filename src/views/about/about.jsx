@@ -12,6 +12,8 @@ import Footer from '@/components/footer/footer';
 import useIntersection from '@/custom-hooks/useIntersection';
 
 function About() {
+  const descriptionTitleRef = useRef(null);
+  const descriptionContentRef = useRef(null);
   const valuesTitleRef = useRef(null);
   const valuesDescriptionRef = useRef(null);
   const intergrityRef = useRef(null);
@@ -38,6 +40,8 @@ function About() {
   const reviewHeadingRef = useRef(null);
   const reviewParagraphRef = useRef(null);
   const footerRef = useRef(null);
+  const descriptionTitleIsInViewport = useIntersection(descriptionTitleRef);
+  const descriptionContentIsInViewport = useIntersection(descriptionContentRef);
   const valuesTitleIsInViewport = useIntersection(valuesTitleRef);
   const valuesDescriptionIsInViewport = useIntersection(valuesDescriptionRef);
   const integrityIsInViewport = useIntersection(intergrityRef);
@@ -86,8 +90,10 @@ function About() {
     <div className="about">
       <SlideShow slides={slides} delay={7000} />
       <section className="about__description">
-        <h1>WE ARE AN ELITE TEAM THAT WORKS TO BUILD THE BEST SOLUTIONS FOR OUR CLIENTS' NEEDS.</h1>
-        <p>
+        <h1 ref={descriptionTitleRef} className={`${descriptionTitleIsInViewport ? 'visible' : ''}`}>
+          WE ARE AN ELITE TEAM THAT WORKS TO BUILD THE BEST SOLUTIONS FOR OUR CLIENTS' NEEDS.
+        </h1>
+        <p ref={descriptionContentRef} className={`${descriptionContentIsInViewport ? 'visible' : ''}`}>
           We practice a collaborative art, which begins by listening intently to our client’s goals and
           desires. From initial concepts through to construction completion, we strive to transform their
           aspirations into reality. We believe a fulfilling process for everyone involved ultimately leads to

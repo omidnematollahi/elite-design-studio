@@ -9,6 +9,7 @@
   }
 
   &__slide {
+    padding: 1rem;
 
     &__content {
       padding: 1rem;
@@ -16,6 +17,9 @@
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      box-shadow: 0 0 2px #aaaaaa;
+      min-height: 300px;
+      border-radius: 0.7rem;
     }
 
     img {
@@ -24,34 +28,34 @@
   }
 }
 
+.slick-next {
+  right: 0 !important;
+}
+
 .slick-prev {
-  &::before {
-    color: black;
-  }
+  left: 0 !important;
 }
 
 .slick-next:before {
-  content: "→" !important;
+  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="M6.4 18L5 16.6L9.575 12L5 7.4L6.4 6l6 6l-6 6Zm6.6 0l-1.4-1.4l4.575-4.6L11.6 7.4L13 6l6 6l-6 6Z"%2F%3E%3C%2Fsvg%3E') !important;
   color: black !important;
 }
 
 .slick-prev:before {
-  content: "←" !important;
+  content: url('data:image/svg+xml,%3Csvg xmlns="http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg" width="24" height="24" viewBox="0 0 24 24"%3E%3Cpath fill="currentColor" d="m11 18l-6-6l6-6l1.4 1.4L7.825 12l4.575 4.6L11 18Zm6.6 0l-6-6l6-6L19 7.4L14.425 12L19 16.6L17.6 18Z"%2F%3E%3C%2Fsvg%3E') !important;
   color: black !important;
+  left: -10px !important;
 }
 
 .slick-prev,
 .slick-next {
-  height: 40px;
-  width: 40px;
+  text-align: center;
+  padding: 8px !important;
+  height: 60px !important;
+  width: 60px !important;
   box-shadow: 0 0 2px #aaaaaa;
-}
-
-.slick-next {
-  &::before {
-    color: black;
-  }
-
+  top: 110% !important;
+  border-radius: 50%;
 }
 
 // .testimonials-section {

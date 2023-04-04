@@ -1,36 +1,31 @@
 import './contact.scss';
 
 import SlideShow from '../../view-components/contact/slideshow';
-import firstImage from '../../assets/images/contact/1.jpg';
+import firstImage from '../../assets/images/contact/contact1.jpg';
 import secondImage from '../../assets/images/contact/2.jpg';
 import thirdImage from '../../assets/images/contact/3.jpg';
 import forthImage from '../../assets/images/contact/4.jpg';
 import Footer from '../../components/footer/footer';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
+import useIntersection from '../../custom-hooks/useIntersection';
 
 export default function Contact() {
   const [activeIndex, setActiveIndex] = useState(0);
   const handleClick = (index) => setActiveIndex(index);
+  const footerRef = useRef(null);
+  const footerIsInViewport = useIntersection(footerRef);
+  const contactTabsRef = useRef(null);
+  const contactTabsIsInViewport = useIntersection(contactTabsRef, '500px');
+  const contactPanelRef = useRef(null);
+  const contactPanelIsInViewport = useIntersection(contactPanelRef);
   const checkActive = (index, className) => {
     return activeIndex === index ? className : '';
   };
   const images = [
     {
       image: firstImage,
-      content: 'test Content 1',
-    },
-    {
-      image: secondImage,
-      content: 'test Content 1',
-    },
-    {
-      image: thirdImage,
-      content: 'test Content 1',
-    },
-    {
-      image: forthImage,
-      content: 'test Content 1',
-    },
+      content: "Let's start your project",
+    }
   ];
 
   const [tabs, setTabs] = useState([
@@ -46,8 +41,13 @@ export default function Contact() {
 
   return (
     <div className="contact">
-      <SlideShow slides={images} delay={7000} />
-      <section className="contact__content">
+      <SlideShow slides={images} delay={7000} dots={false} />
+      <section
+        className={`contact__content ${
+          contactTabsIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
+        }`}
+        ref={contactTabsRef}
+      >
         <ul className="contact__tab-list">
           {tabs.map((tab, index) => {
             return (
@@ -63,7 +63,12 @@ export default function Contact() {
           })}
         </ul>
       </section>
-      <section className="contact__panel">
+      <section
+        className={`contact__panel  ${
+          contactPanelIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
+        }`}
+        ref={contactPanelRef}
+      >
         <div className={`contact__tab-content project ${checkActive(0, 'active')}`}>
           <h1>Let’s talk about your project</h1>
           <p>
@@ -160,7 +165,9 @@ export default function Contact() {
           </div>
         </div>
       </section>
-      <Footer></Footer>
+      <div className="home__footer" ref={footerRef}>
+        <Footer toggle={footerIsInViewport}></Footer>
+      </div>
     </div>
   );
 }

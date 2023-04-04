@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './slideshow.scss';
 
-export default function Slideshow({ slides, delay }) {
+export default function Slideshow({ slides, delay, dots = true }) {
   const [index, setIndex] = useState(null);
   const timeoutRef = useRef(null);
   const sliderRef = useRef(null);
@@ -64,21 +64,25 @@ export default function Slideshow({ slides, delay }) {
               display: `${index === idx ? 'flex' : 'none'}`,
             }}
           >
-            <h1>{slide.content}</h1>
+            <h1 className="animate__animated animate__slideInLeft">{slide.content}</h1>
           </div>
         ))}
       </div>
-      <div className="slideshow__dots">
-        {slides.map((_, idx) => (
-          <div
-            key={idx}
-            className={`slideshow__dot ${index === idx ? ' active' : ''}`}
-            onClick={() => {
-              setIndex(idx);
-            }}
-          ></div>
-        ))}
-      </div>
+      {dots ? (
+        <div className="slideshow__dots">
+          {slides.map((_, idx) => (
+            <div
+              key={idx}
+              className={`slideshow__dot ${index === idx ? ' active' : ''}`}
+              onClick={() => {
+                setIndex(idx);
+              }}
+            ></div>
+          ))}
+        </div>
+      ) : (
+        ''
+      )}
     </div>
   );
 }

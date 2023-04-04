@@ -34,7 +34,6 @@ export const useIntersection = (element, rootMargin) => {
   const [isVisible, setState] = useState(false);
 
   useEffect(() => {
-    console.log(element);
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {

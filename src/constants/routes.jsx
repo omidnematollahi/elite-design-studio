@@ -1,6 +1,7 @@
 import About from '../views/about/about';
 import Contact from '../views/contact/contact';
 import Projects from '../views/projects/projects';
+import ProjectDetail from '../views/project-detail/project-detail';
 import Services from '../views/services/services';
 
 export const ROUTE_LIST = [
@@ -10,6 +11,12 @@ export const ROUTE_LIST = [
     path: '/projects',
     expand: false,
     view: <Projects />,
+  },
+  {
+    name: 'Projects',
+    path: '/projects/:id',
+    expand: false,
+    view: <ProjectDetail />,
   },
   {
     name: 'Contact us',

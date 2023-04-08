@@ -4,11 +4,20 @@ import SlideShow from '@/view-components/contact/slideshow';
 import firstImage from '@/assets/images/services/service10.jpg';
 import secondImage from '@/assets/images/services/service11.jpg';
 import thirdImage from '@/assets/images/services/service12.jpg';
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Footer from '@/components/footer/footer';
+import useIntersection from '../../custom-hooks/useIntersection';
 
 function Services() {
   const [activeIndex, setActiveIndex] = useState(0);
+  const tabsRef = useRef(null);
+  const tabsIsInViewport = useIntersection(tabsRef);
+  const panelRef = useRef(null);
+  const panelIsInViewport = useIntersection(panelRef);
+  const footerRef = useRef(null);
+  const footerIsInViewport = useIntersection(footerRef);
+  const descriptionRef = useRef(null);
+  const descriptionIsInViewport = useIntersection(descriptionRef);
   const handleClick = (index) => setActiveIndex(index);
   const checkActive = (index, className) => {
     return activeIndex === index ? className : '';
@@ -58,33 +67,51 @@ function Services() {
   return (
     <div className="services">
       <SlideShow slides={slides} delay={7000} />
-      <section className="services__description">
-        <p>
-          We differentiate ourselves from our competitors in that we don’t just design; we help you figure out
-          how to bring your personality into your building, too.
-        </p>
-        <p>
-          Whatever your vision and budget, we’ll help you find the appropriate design package as a first step
-          in creating an outdoor space which serves as an extension of your home.
-        </p>
-      </section>
-      <section className="services__tabs">
-        <ul className="services__tab-list">
-          {tabs.map((tab, index) => {
-            return (
-              <li className="services__tab-item" key={index}>
-                <a
-                  className={`services__tab-link ${checkActive(index, 'active')}`}
-                  onClick={() => handleClick(index)}
-                >
-                  {tab.title}
-                </a>
-              </li>
-            );
-          })}
-        </ul>
-      </section>
-      <section className="services__panel">
+      <div className="services__mock"></div>
+      <div ref={descriptionRef}>
+        <section
+          className={`services__description ${
+            descriptionIsInViewport ? 'visible animate__animated animate__backInUp' : ''
+          }`}
+        >
+          <p>
+            We differentiate ourselves from our competitors in that we don’t just design; we help you figure
+            out how to bring your personality into your building, too.
+          </p>
+          <p>
+            Whatever your vision and budget, we’ll help you find the appropriate design package as a first
+            step in creating an outdoor space which serves as an extension of your home.
+          </p>
+        </section>
+      </div>
+      <div ref={tabsRef}>
+        <section
+          className={`services__tabs ${
+            tabsIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
+          }`}
+        >
+          <ul className="services__tab-list">
+            {tabs.map((tab, index) => {
+              return (
+                <li className="services__tab-item" key={index}>
+                  <a
+                    className={`services__tab-link ${checkActive(index, 'active')}`}
+                    onClick={() => handleClick(index)}
+                  >
+                    {tab.title}
+                  </a>
+                </li>
+              );
+            })}
+          </ul>
+        </section>
+      </div>
+      <div ref={panelRef}></div>
+      <section
+        className={`services__panel ${
+          panelIsInViewport ? 'visible animate__animated animate_slideInUp' : ''
+        }`}
+      >
         <div className={`services__tab-content interior ${checkActive(0, 'active')}`}>
           <div className="services__explaination">
             <h1>Interior Residential Design</h1>
@@ -167,7 +194,9 @@ function Services() {
           </div>
         </div>
       </section>
-      <Footer></Footer>
+      <div className="home__footer" ref={footerRef}>
+        <Footer toggle={footerIsInViewport}></Footer>
+      </div>
     </div>
   );
 }

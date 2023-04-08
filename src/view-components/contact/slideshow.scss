@@ -36,6 +36,11 @@
         background-repeat: no-repeat;
         z-index: -2;
 
+        span {
+            max-width: 60%;
+            font-size: 1.5rem;
+        }
+
         &.active {
             -webkit-animation: zoom-a 10s linear infinite alternate;
             /* Safari 4+ */

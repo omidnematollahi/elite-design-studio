@@ -3,97 +3,19 @@ import Footer from '@/components/footer/footer';
 import Masonry from 'react-masonry-css';
 import { useRef, createRef } from 'react';
 import useIntersection from '@/custom-hooks/useIntersection';
+import { useNavigate } from 'react-router-dom';
 
-import firstImage from '@/assets/images/projects/1-min.jpg';
-import secondImage from '@/assets/images/projects/2-min.jpg';
-import thirdImage from '@/assets/images/projects/3-min.jpg';
-import forthImage from '@/assets/images/projects/4-min.jpg';
-import fifthImage from '@/assets/images/projects/5-min.jpg';
-import sixthImage from '@/assets/images/projects/6-min.JPG';
-import seventhImage from '@/assets/images/projects/7-min.JPG';
-import eigthImage from '@/assets/images/projects/8-min.JPG';
-import ninthImage from '@/assets/images/projects/9-min.JPG';
-import tenthImage from '@/assets/images/projects/10-min.JPG';
-import eleventhImage from '@/assets/images/projects/11-min.JPG';
-import twelfthImage from '@/assets/images/projects/12-min.JPG';
-import theThirteenthImage from '@/assets/images/projects/13-min.JPG';
-import theForteenthImage from '@/assets/images/projects/14-min.JPG';
-import theFifteenthImage from '@/assets/images/projects/15-min.JPG';
-import theSixteenthImage from '@/assets/images/projects/16-min.JPG';
+import { PROJECT_LIST } from '@/constants/projects';
 
 function Projects() {
+  const navigate = useNavigate();
   const breakpointColumnsObj = {
     default: 2,
     1100: 2,
     700: 2,
     500: 1,
   };
-  const data = [
-    {
-      image: firstImage,
-      title: 'image1',
-    },
-    {
-      image: secondImage,
-      title: 'image2',
-    },
-    {
-      image: thirdImage,
-      title: 'image3',
-    },
-    {
-      image: forthImage,
-      title: 'image4',
-    },
-    {
-      image: fifthImage,
-      title: 'image5',
-    },
-    {
-      image: sixthImage,
-      title: 'image6',
-    },
-    {
-      image: seventhImage,
-      title: 'image7',
-    },
-    {
-      image: eigthImage,
-      title: 'image8',
-    },
-    {
-      image: ninthImage,
-      title: 'image9',
-    },
-    {
-      image: tenthImage,
-      title: 'image10',
-    },
-    {
-      image: eleventhImage,
-      title: 'image11',
-    },
-    {
-      image: twelfthImage,
-      title: 'image12',
-    },
-    {
-      image: theThirteenthImage,
-      title: 'image13',
-    },
-    {
-      image: theForteenthImage,
-      title: 'image14',
-    },
-    {
-      image: theFifteenthImage,
-      title: 'image15',
-    },
-    {
-      image: theSixteenthImage,
-      title: 'image15',
-    },
-  ];
+  const data = PROJECT_LIST;
   const footerRef = useRef(null);
   const footerIsInViewport = useIntersection(footerRef);
   const elementsRef = useRef(data.map(() => createRef()));
@@ -102,9 +24,13 @@ function Projects() {
     elementsAreInViewport[index] = useIntersection(elementRef, '-210px');
   });
 
+  const goToDetails = (id) => {
+    navigate(`/projects/${id}`);
+  };
+
   return (
     <div className="projects">
-      <div className="projects__description">
+      <div className="projects__description animate__animated animate__backInUp">
         <h1>Projects</h1>
         <p>
           ELITE Design works closely with each of our clients, taking great time and care to ensure we achieve
@@ -126,9 +52,11 @@ function Projects() {
                 }`}
                 ref={elementsRef.current[index]}
                 key={index}
+                onClick={() => goToDetails(item.id)}
               >
-                <img src={item.image} />
-                <span>{item.title}</span>
+                <img src={item.images[0]} />
+                <span className="projects__title">{item.name}</span>
+                <span className="projects__category">{item.category}</span>
                 <div className="projects__hover-box">
                   <div className="projects__hover-box__text">
                     <span>open</span>

@@ -10,6 +10,7 @@ import About from './views/about/about';
 import Contact from './views/contact/contact';
 import Services from './views/services/services';
 import Projects from './views/projects/projects';
+import ProjectDetail from './views/project-detail/project-detail';
 import 'animate.css';
 
 const router = createBrowserRouter([
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/projects',
         element: <Projects />,
+      },
+      {
+        path: '/projects/:id',
+        element: <ProjectDetail />,
       },
       {
         path: '/contact',

@@ -13,7 +13,17 @@
         }
     }
 
+    &__title {
+        font-size: 1.3rem;
+        display: block;
+    }
+
+    &__category {
+        font-size: 1rem;
+    }
+
     &__item {
+        cursor: pointer;
         opacity: 0;
         overflow: hidden;
 

@@ -5,6 +5,7 @@
   position: relative;
 
   &__description {
+    opacity: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -12,6 +13,10 @@
     padding: 3rem;
     margin: 0 auto;
     max-width: 60%;
+
+    &.visible {
+      opacity: 1;
+    }
 
     @include breakpoint(small) {
       padding: 5px 10px;
@@ -21,8 +26,12 @@
     // text-align: center;
   }
 
+  &__mock {
+    min-height: 3rem;
+  }
+
   &__explaination {
-    background-color: #e8e8e8;
+    background-color: rgba(255, 255, 255, 0.6);
     max-height: 95%;
     width: 30%;
     padding: 3rem;
@@ -32,7 +41,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
 
     @include breakpoint(small) {
       width: 100%;
@@ -55,6 +63,11 @@
     padding: 1rem 0;
     max-width: 80%;
     margin: 0 auto;
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
   }
 
   &__tab-list {
@@ -91,7 +104,7 @@
     }
 
     &.active {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: #FF7043;
       color: #ffffff;
       position: relative;
 
@@ -105,12 +118,18 @@
         height: 0;
         border-style: solid;
         border-width: 10px 12.5px 0 12.5px;
-        border-color: rgba(0, 0, 0, 0.3) transparent transparent transparent;
+        border-color: #FF7043 transparent transparent transparent;
       }
     }
   }
 
-  &__panel {}
+  &__panel {
+    opacity: 0;
+
+    &.visible {
+      opacity: 1;
+    }
+  }
 
   &__tab-content {
     background-color: #eaeaea;
@@ -133,23 +152,23 @@
     }
 
     &.interior {
-      background-image: url('../../assets/images/services/service4.jpg');
+      background-image: url('../../assets/images/services/interior.jpg');
     }
 
     &.exterior {
-      background-image: url('../../assets/images/services/service5.jpg');
+      background-image: url('../../assets/images/services/exterior.jpg');
     }
 
     &.landscape {
-      background-image: url('../../assets/images/services/service6.jpg');
+      background-image: url('../../assets/images/services/Landscape.JPG');
     }
 
     &.space {
-      background-image: url('../../assets/images/services/service7.jpg');
+      background-image: url('../../assets/images/services/Space Planning.jpeg');
     }
 
     &.commercial {
-      background-image: url('../../assets/images/services/service8.jpg');
+      background-image: url('../../assets/images/services/Commercial.jpg');
     }
 
     &.material {

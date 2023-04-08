@@ -154,9 +154,9 @@ import darkBathroom4 from '@/assets/images/projects/interior-design/bathroom/dar
 import darkBathroom5 from '@/assets/images/projects/interior-design/bathroom/dark/5.jpg';
 import darkBathroom6 from '@/assets/images/projects/interior-design/bathroom/dark/6.jpg';
 import darkBathroom7 from '@/assets/images/projects/interior-design/bathroom/dark/7.jpg';
-import darkBathroom8 from '@/assets/images/projects/interior-design/bathroom/dark/8.JPG';
-import darkBathroom9 from '@/assets/images/projects/interior-design/bathroom/dark/9.JPG';
-import darkBathroom10 from '@/assets/images/projects/interior-design/bathroom/dark/10.JPG';
+import darkBathroom8 from '@/assets/images/projects/interior-design/bathroom/dark/8.jpg';
+import darkBathroom9 from '@/assets/images/projects/interior-design/bathroom/dark/9.jpg';
+import darkBathroom10 from '@/assets/images/projects/interior-design/bathroom/dark/10.jpg';
 import flowerBathroom1 from '@/assets/images/projects/interior-design/bathroom/flower/1.JPG';
 import flowerBathroom2 from '@/assets/images/projects/interior-design/bathroom/flower/2.JPG';
 import flowerBathroom3 from '@/assets/images/projects/interior-design/bathroom/flower/3.JPG';
@@ -179,7 +179,6 @@ import minimalBathroom2 from '@/assets/images/projects/interior-design/bathroom/
 import minimalBathroom3 from '@/assets/images/projects/interior-design/bathroom/minimal/3.JPG';
 import minimalBathroom4 from '@/assets/images/projects/interior-design/bathroom/minimal/4.JPG';
 import minimalBathroom5 from '@/assets/images/projects/interior-design/bathroom/minimal/5.JPG';
-import minimalBathroom6 from '@/assets/images/projects/interior-design/bathroom/minimal/6.JPG';
 import toughBathroom1 from '@/assets/images/projects/interior-design/bathroom/Tough/1.JPG';
 import toughBathroom2 from '@/assets/images/projects/interior-design/bathroom/Tough/2.JPG';
 import toughBathroom3 from '@/assets/images/projects/interior-design/bathroom/Tough/3.JPG';

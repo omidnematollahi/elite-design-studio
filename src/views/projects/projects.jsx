@@ -3,11 +3,16 @@ import Footer from '@/components/footer/footer';
 import Masonry from 'react-masonry-css';
 import { useRef, createRef } from 'react';
 import useIntersection from '@/custom-hooks/useIntersection';
+import useOnLoadImages from '@/custom-hooks/useOnLoadImages';
 import { useNavigate } from 'react-router-dom';
+import Skeleton from 'react-loading-skeleton';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import { PROJECT_LIST } from '@/constants/projects';
 
 function Projects() {
+  const wrapperRef = useRef(null);
+  const imagesLoaded = useOnLoadImages(wrapperRef);
   const navigate = useNavigate();
   const breakpointColumnsObj = {
     default: 2,
@@ -41,7 +46,7 @@ function Projects() {
       <section className="projects__filter">
         <span>Filters</span>
       </section>
-      <div className="projects__items">
+      <div className="projects__items" ref={wrapperRef}>
         <Masonry
           breakpointCols={breakpointColumnsObj}
           className="my-masonry-grid"
@@ -57,7 +62,7 @@ function Projects() {
                 key={index}
                 onClick={() => goToDetails(item.id)}
               >
-                <img src={item.images[0]} />
+                {imagesLoaded ? <img src={item.images[0]} /> : <Skeleton count={5} />}
                 <span className="projects__title">{item.name}</span>
                 <span className="projects__category">{item.category}</span>
                 <div className="projects__hover-box">

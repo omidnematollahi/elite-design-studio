@@ -13,6 +13,14 @@
         }
     }
 
+    &__filter {
+        padding: 2rem 10rem;
+
+        @include breakpoint(small) {
+            padding: 5px 20px;
+        }
+    }
+
     &__title {
         font-size: 1.3rem;
         display: block;

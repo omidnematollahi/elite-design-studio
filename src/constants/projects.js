@@ -320,6 +320,18 @@ import blackBrickLiving7 from '@/assets/images/projects/interior-design/living/B
 import blackBrickLiving8 from '@/assets/images/projects/interior-design/living/Black-Brick/8.jpg';
 import blackBrickLiving9 from '@/assets/images/projects/interior-design/living/Black-Brick/9.jpg';
 import blackBrickLiving10 from '@/assets/images/projects/interior-design/living/Black-Brick/10.jpg';
+import hillsideHouse1 from '@/assets/images/projects/interior-design/hillside-house/1.png';
+import hillsideHouse2 from '@/assets/images/projects/interior-design/hillside-house/2.png';
+import hillsideHouse3 from '@/assets/images/projects/interior-design/hillside-house/3.png';
+import hillsideHouse4 from '@/assets/images/projects/interior-design/hillside-house/4.png';
+import hillsideHouse5 from '@/assets/images/projects/interior-design/hillside-house/5.png';
+import hillsideHouse6 from '@/assets/images/projects/interior-design/hillside-house/6.png';
+import hillsideHouse7 from '@/assets/images/projects/interior-design/hillside-house/7.png';
+import hillsideHouse8 from '@/assets/images/projects/interior-design/hillside-house/8.png';
+import hillsideHouse9 from '@/assets/images/projects/interior-design/hillside-house/9.png';
+import hillsideHouse10 from '@/assets/images/projects/interior-design/hillside-house/10.png';
+import hillsideHouse11 from '@/assets/images/projects/interior-design/hillside-house/11.png';
+import hillsideHouse12 from '@/assets/images/projects/interior-design/hillside-house/12.png';
 
 export const PROJECT_LIST = [
   {
@@ -829,6 +841,25 @@ export const PROJECT_LIST = [
       blackBrickLiving8,
       blackBrickLiving9,
       blackBrickLiving10,
+    ],
+  },
+  {
+    name: 'hillside house',
+    id: 46,
+    category: 'interior',
+    images: [
+      hillsideHouse1,
+      hillsideHouse2,
+      hillsideHouse3,
+      hillsideHouse4,
+      hillsideHouse5,
+      hillsideHouse6,
+      hillsideHouse7,
+      hillsideHouse8,
+      hillsideHouse9,
+      hillsideHouse10,
+      hillsideHouse11,
+      hillsideHouse12,
     ],
   },
 ];

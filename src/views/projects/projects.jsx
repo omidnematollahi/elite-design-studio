@@ -8,6 +8,8 @@ import { useNavigate } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
+import Checkbox from '@/components/checkbox/checkbox';
+
 import { PROJECT_LIST } from '@/constants/projects';
 
 function Projects() {
@@ -33,6 +35,10 @@ function Projects() {
     navigate(`/projects/${id}`);
   };
 
+  const onChangeHandle = (event) => {
+    event.stopPropagation();
+  };
+
   return (
     <div className="projects">
       <div className="projects__description animate__animated animate__backInUp">
@@ -43,8 +49,16 @@ function Projects() {
           projects that illustrate our innovative and wide ranging approach to design.
         </p>
       </div>
-      <section className="projects__filter">
+      <section className="projects__filter animate__animated animate__backInUp">
         <span>Filters</span>
+        <span>
+          <input type="checkbox" id="commercialCheck" onChange={onChangeHandle} />
+          <label htmlFor="commercialCheck">Commercial</label>
+          <input type="checkbox" id="interiorCheck" onChange={onChangeHandle} />
+          <label htmlFor="interiorCheck">Interior Design</label>
+          <input type="checkbox" id="landscapeCheck" onChange={onChangeHandle} />
+          <label htmlFor="landscapeCheck">Landscape</label>
+        </span>
       </section>
       <div className="projects__items" ref={wrapperRef}>
         <Masonry

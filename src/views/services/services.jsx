@@ -130,7 +130,7 @@ function Services() {
               functional.
             </p>
             <p>
-              We believe that all design disciplines need to work together; our interior design schemes are
+              We believe that all design disciplines need to work together. our interior design schemes are
               developed in close coordination with our in-house interior architecture, architectural design,
               lighting and landscaping design teams to ensure a harmonious aesthetic that results in
               exceptionally well executed, balanced and beautifully finished homes.

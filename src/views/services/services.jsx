@@ -7,7 +7,7 @@ import thirdImage from '@/assets/images/services/service12.jpg';
 import interior from '@/assets/images/services/interior.jpg';
 import exterior from '@/assets/images/services/exterior.jpg';
 import landscape from '@/assets/images/services/Landscape.JPG';
-import space from '@/assets/images/services/Space Planning.jpeg';
+import space from '@/assets/images/services/space-planning.jpeg';
 import commercial from '@/assets/images/services/Commercial.jpg';
 import material from '@/assets/images/services/service5.jpg';
 import { useState, useRef } from 'react';

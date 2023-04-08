@@ -38,6 +38,9 @@ function Projects() {
           projects that illustrate our innovative and wide ranging approach to design.
         </p>
       </div>
+      <section className="projects__filter">
+        <span>Filters</span>
+      </section>
       <div className="projects__items">
         <Masonry
           breakpointCols={breakpointColumnsObj}

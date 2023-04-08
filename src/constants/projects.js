@@ -147,13 +147,13 @@ import coolBathroom4 from '@/assets/images/projects/interior-design/bathroom/coo
 import coolBathroom5 from '@/assets/images/projects/interior-design/bathroom/cool/5.JPG';
 import coolBathroom6 from '@/assets/images/projects/interior-design/bathroom/cool/6.JPG';
 import coolBathroom7 from '@/assets/images/projects/interior-design/bathroom/cool/7.JPG';
-import darkBathroom1 from '@/assets/images/projects/interior-design/bathroom/dark/1.JPG';
-import darkBathroom2 from '@/assets/images/projects/interior-design/bathroom/dark/2.JPG';
-import darkBathroom3 from '@/assets/images/projects/interior-design/bathroom/dark/3.JPG';
-import darkBathroom4 from '@/assets/images/projects/interior-design/bathroom/dark/4.JPG';
-import darkBathroom5 from '@/assets/images/projects/interior-design/bathroom/dark/5.JPG';
-import darkBathroom6 from '@/assets/images/projects/interior-design/bathroom/dark/6.JPG';
-import darkBathroom7 from '@/assets/images/projects/interior-design/bathroom/dark/7.JPG';
+import darkBathroom1 from '@/assets/images/projects/interior-design/bathroom/dark/1.jpg';
+import darkBathroom2 from '@/assets/images/projects/interior-design/bathroom/dark/2.jpg';
+import darkBathroom3 from '@/assets/images/projects/interior-design/bathroom/dark/3.jpg';
+import darkBathroom4 from '@/assets/images/projects/interior-design/bathroom/dark/4.jpg';
+import darkBathroom5 from '@/assets/images/projects/interior-design/bathroom/dark/5.jpg';
+import darkBathroom6 from '@/assets/images/projects/interior-design/bathroom/dark/6.jpg';
+import darkBathroom7 from '@/assets/images/projects/interior-design/bathroom/dark/7.jpg';
 import darkBathroom8 from '@/assets/images/projects/interior-design/bathroom/dark/8.JPG';
 import darkBathroom9 from '@/assets/images/projects/interior-design/bathroom/dark/9.JPG';
 import darkBathroom10 from '@/assets/images/projects/interior-design/bathroom/dark/10.JPG';
@@ -544,6 +544,20 @@ export const PROJECT_LIST = [
     ],
   },
   {
+    name: 'classic bathroom',
+    id: 45,
+    category: 'interior',
+    images: [
+      classicBathroom1,
+      classicBathroom2,
+      classicBathroom3,
+      classicBathroom4,
+      classicBathroom5,
+      classicBathroom6,
+      classicBathroom7,
+    ],
+  },
+  {
     name: 'dark bathroom',
     id: 17,
     category: 'interior',
@@ -806,16 +820,16 @@ export const PROJECT_LIST = [
     id: 44,
     category: 'interior',
     images: [
-        blackBrickLiving1,
-        blackBrickLiving2,
-        blackBrickLiving3,
-        blackBrickLiving4,
-        blackBrickLiving5,
-        blackBrickLiving6,
-        blackBrickLiving7,
-        blackBrickLiving8,
-        blackBrickLiving9,
-        blackBrickLiving10,
+      blackBrickLiving1,
+      blackBrickLiving2,
+      blackBrickLiving3,
+      blackBrickLiving4,
+      blackBrickLiving5,
+      blackBrickLiving6,
+      blackBrickLiving7,
+      blackBrickLiving8,
+      blackBrickLiving9,
+      blackBrickLiving10,
     ],
   },
 ];

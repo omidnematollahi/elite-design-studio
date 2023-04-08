@@ -4,6 +4,12 @@ import SlideShow from '@/view-components/contact/slideshow';
 import firstImage from '@/assets/images/services/service10.jpg';
 import secondImage from '@/assets/images/services/service11.jpg';
 import thirdImage from '@/assets/images/services/service12.jpg';
+import interior from '@/assets/images/services/interior.jpg';
+import exterior from '@/assets/images/services/exterior.jpg';
+import landscape from '@/assets/images/services/Landscape.JPG';
+import space from '@/assets/images/services/Space Planning.jpeg';
+import commercial from '@/assets/images/services/Commercial.jpg';
+import material from '@/assets/images/services/service5.jpg';
 import { useState, useRef } from 'react';
 import Footer from '@/components/footer/footer';
 import useIntersection from '../../custom-hooks/useIntersection';
@@ -112,7 +118,10 @@ function Services() {
           panelIsInViewport ? 'visible animate__animated animate_slideInUp' : ''
         }`}
       >
-        <div className={`services__tab-content interior ${checkActive(0, 'active')}`}>
+        <div
+          className={`services__tab-content interior ${checkActive(0, 'active')}`}
+          style={{ backgroundImage: `url(${interior})` }}
+        >
           <div className="services__explaination">
             <h1>Interior Residential Design</h1>
             <p>
@@ -134,7 +143,10 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className={`services__tab-content exterior ${checkActive(1, 'active')}`}>
+        <div
+          className={`services__tab-content exterior ${checkActive(1, 'active')}`}
+          style={{ backgroundImage: `url(${exterior})` }}
+        >
           <div className="services__explaination">
             <h1>Exterior Residential Design</h1>
             <p>
@@ -143,7 +155,10 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className={`services__tab-content landscape ${checkActive(2, 'active')}`}>
+        <div
+          className={`services__tab-content landscape ${checkActive(2, 'active')}`}
+          style={{ backgroundImage: `url(${landscape})` }}
+        >
           <div className="services__explaination">
             <h1>Landscape Design</h1>
             <p>
@@ -157,7 +172,10 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className={`services__tab-content space ${checkActive(3, 'active')}`}>
+        <div
+          className={`services__tab-content space ${checkActive(3, 'active')}`}
+          style={{ backgroundImage: `url(${space})` }}
+        >
           <div className="services__explaination">
             <h1>Space Planning</h1>
             <p>
@@ -168,7 +186,10 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className={`services__tab-content commercial ${checkActive(4, 'active')}`}>
+        <div
+          className={`services__tab-content commercial ${checkActive(4, 'active')}`}
+          style={{ backgroundImage: `url(${commercial})` }}
+        >
           <div className="services__explaination">
             <h1>Commercial Design</h1>
             <p>
@@ -183,7 +204,10 @@ function Services() {
             </p>
           </div>
         </div>
-        <div className={`services__tab-content material ${checkActive(5, 'active')}`}>
+        <div
+          className={`services__tab-content material ${checkActive(5, 'active')}`}
+          style={{ backgroundImage: `url(${material})` }}
+        >
           <div className="services__explaination">
             <h1>Material specification</h1>
             <p>

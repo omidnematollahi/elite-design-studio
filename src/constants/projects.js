@@ -6,7 +6,7 @@ import animalCareCenter5 from '@/assets/images/projects/commercial/animal-care-c
 import animalClinic1 from '@/assets/images/projects/commercial/animal-clinic/cc.jpg';
 import animalClinic2 from '@/assets/images/projects/commercial/animal-clinic/k.jpg';
 import animalClinic3 from '@/assets/images/projects/commercial/animal-clinic/k1.jpg';
-// import animalClinic4 from '@/assets/images/projects/commercial/animal-clinic/kk_2-photo.jpg';
+import animalClinic4 from '@/assets/images/projects/commercial/animal-clinic/kk_2-photo.jpg';
 import animalClinic5 from '@/assets/images/projects/commercial/animal-clinic/kk_7-photo.jpg';
 import animalClinic6 from '@/assets/images/projects/commercial/animal-clinic/kk_8-photo.jpg';
 import animalClinic7 from '@/assets/images/projects/commercial/animal-clinic/kk_10-photo.jpg';
@@ -138,7 +138,7 @@ export const PROJECT_LIST = [
       animalClinic1,
       animalClinic2,
       animalClinic3,
-      // animalClinic4,
+      animalClinic4,
       animalClinic5,
       animalClinic6,
       animalClinic7,

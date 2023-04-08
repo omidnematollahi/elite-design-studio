@@ -36,11 +36,11 @@ import arcticElevation13 from '@/assets/images/projects/commercial/arctic-elevat
 import arcticElevation14 from '@/assets/images/projects/commercial/arctic-elevation/14.jpg';
 import arcticElevation15 from '@/assets/images/projects/commercial/arctic-elevation/15.jpg';
 import arcticElevation16 from '@/assets/images/projects/commercial/arctic-elevation/16.jpg';
-import arcticElevation17 from '@/assets/images/projects/commercial/arctic-elevation/17.jpg';
-import arcticElevation18 from '@/assets/images/projects/commercial/arctic-elevation/18.jpg';
-import arcticElevation19 from '@/assets/images/projects/commercial/arctic-elevation/19.jpg';
-import arcticElevation20 from '@/assets/images/projects/commercial/arctic-elevation/20.jpg';
-import arcticElevation21 from '@/assets/images/projects/commercial/arctic-elevation/21.jpg';
+import arcticElevation17 from '@/assets/images/projects/commercial/arctic-elevation/17.JPG';
+import arcticElevation18 from '@/assets/images/projects/commercial/arctic-elevation/18.JPG';
+import arcticElevation19 from '@/assets/images/projects/commercial/arctic-elevation/19.JPG';
+import arcticElevation20 from '@/assets/images/projects/commercial/arctic-elevation/20.JPG';
+import arcticElevation21 from '@/assets/images/projects/commercial/arctic-elevation/21.JPG';
 import betweenArcs1 from '@/assets/images/projects/commercial/between-arcs/1.jpg';
 import betweenArcs2 from '@/assets/images/projects/commercial/between-arcs/2.jpg';
 import betweenArcs3 from '@/assets/images/projects/commercial/between-arcs/3.jpg';

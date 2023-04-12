@@ -28,6 +28,12 @@
             padding: 1.5rem 0 0;
         }
 
+        &__content {
+            .my-masonry-grid {
+                margin-left: 0;
+            }
+        }
+
         &.noAnimation {
             display: none;
         }

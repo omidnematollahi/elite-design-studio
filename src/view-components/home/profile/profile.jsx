@@ -27,10 +27,10 @@ export function Profile({ toggle }) {
   return (
     <div className="profile">
       <div className="container">
-        <div className={`profile__avatar ${toggle ? 'visible animate__animated animate__slideInUp' : ''}`}>
+        <div className={`profile__avatar ${toggle ? 'visible animate__animated animate__backInUp' : ''}`}>
           <img src={personalPicture} />
         </div>
-        <div className={`profile__about  ${toggle ? 'visible animate__animated animate__slideInUp' : ''}`}>
+        <div className={`profile__about  ${toggle ? 'visible animate__animated animate__backInUp' : ''}`}>
           <div className="profile__title">
             <h2>About Elite Design Studio</h2>
           </div>

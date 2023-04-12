@@ -52,14 +52,15 @@ function Home() {
           </>
         )}
       </div>
+      <div className='home__mock'></div>
       <div className="home__secondSection" ref={profileRef}>
         <Profile toggle={profileIsInViewport}></Profile>
       </div>
-      <div className="home_thirdSection" ref={projectsRef}>
-        <Projects toggle={projectsIsInViewport}></Projects>
-      </div>
       <div className="home_forthSection" ref={commentsRef}>
         <Comments toggle={commentsIsInViewport}></Comments>
+      </div>
+      <div className="home_thirdSection" ref={projectsRef}>
+        <Projects toggle={projectsIsInViewport}></Projects>
       </div>
       <div className="home__footer" ref={footerRef}>
         <Footer toggle={footerIsInViewport}></Footer>

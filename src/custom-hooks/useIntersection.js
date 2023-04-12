@@ -37,7 +37,6 @@ export const useIntersection = (element, rootMargin) => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
-          console.log(entry.isIntersecting);
           setState(entry.isIntersecting);
           observer.unobserve(element?.current);
         }

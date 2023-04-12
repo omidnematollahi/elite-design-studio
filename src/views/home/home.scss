@@ -10,6 +10,10 @@
         text-align: center;
     }
 
+    &__mock {
+        min-height: 5rem;
+    }
+
     &__secondSection {
         // height: 100%;
         width: 100%;
@@ -83,7 +87,7 @@
             height: 100%;
             width: 100%;
             background-color: rgba($color: #000000, $alpha: 0.5);
-            background-image: linear-gradient(0deg, rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url('../../assets/images/home_banner.JPG');
+            background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/banner.png');
             background-attachment: fixed;
             // filter: grayscale(40%);
             // filter: sepia(0%) hue-rotate(190deg) saturate(100%);

@@ -23,6 +23,15 @@ export const Comments = ({ toggle }) => {
     slidesToShow: 2,
     speed: 500,
     autoplaySpeed: 10000,
+    responsive: [
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+        },
+      },
+    ],
   };
   return (
     <div className={`comments ${toggle ? 'toggled animate__animated animate__slideInUp' : ''}`}>

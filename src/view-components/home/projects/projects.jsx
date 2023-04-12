@@ -1,4 +1,3 @@
-import personalPicture from '@/assets/images/personal-picture.png';
 import './projects.scss';
 import { animated, useSpring } from '@react-spring/web';
 import { useScroll } from 'react-use-gesture';

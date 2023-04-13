@@ -39,6 +39,7 @@ export const Comments = ({ toggle }) => {
       <Slider {...settings}>
         <div className="comments__slide">
           <div className="comments__slide__content">
+            <Icon className="comments__slide__icon" icon="bi:chat-quote" />
             <img src={avatar1} />
             <p>
               Ellie is special to work with he understands so much about design, service, and meeting the
@@ -48,6 +49,7 @@ export const Comments = ({ toggle }) => {
         </div>
         <div className="comments__slide">
           <div className="comments__slide__content">
+            <Icon className="comments__slide__icon" icon="bi:chat-quote" />
             <img src={avatar2} />
             <p>
               Ellie knows her stuff! She keeps it very professional and her work speaks wonders! Thanks guys,
@@ -58,12 +60,14 @@ export const Comments = ({ toggle }) => {
         </div>
         <div className="comments__slide">
           <div className="comments__slide__content">
+            <Icon className="comments__slide__icon" icon="bi:chat-quote" />
             <img src={avatar3} />
             <p>Great experience! Amazing and fast work! They know exactly what I asked for.</p>
           </div>
         </div>
         <div className="comments__slide">
           <div className="comments__slide__content">
+            <Icon className="comments__slide__icon" icon="bi:chat-quote" />
             <img src={avatar4} />
             <p>
               Outstanding company! Talented, honest, hardworking and exceeded our expectations. Young company
@@ -73,6 +77,7 @@ export const Comments = ({ toggle }) => {
         </div>
         <div className="comments__slide">
           <div className="comments__slide__content">
+            <Icon className="comments__slide__icon" icon="bi:chat-quote" />
             <img src={avatar3} />
             <p>
               We had the pleasure of working with Elite design studio on our custom home. We collaborated
@@ -84,6 +89,7 @@ export const Comments = ({ toggle }) => {
         </div>
         <div className="comments__slide">
           <div className="comments__slide__content">
+            <Icon className="comments__slide__icon" icon="bi:chat-quote" />
             <img src={avatar4} />
             <p>
               We have hired Ellie to do 360 virtual tour for our new development project. They were able to

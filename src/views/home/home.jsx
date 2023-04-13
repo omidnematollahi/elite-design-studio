@@ -5,6 +5,12 @@ import { Profile } from '../../view-components/home/profile/profile';
 import { Projects } from '../../view-components/home/projects/projects';
 import { Footer } from '../../components/footer/footer';
 import { Comments } from '../../view-components/home/comments/comments';
+import SlideShow from '@/view-components/contact/slideshow';
+import firstImage from '@/assets/images/1.jpg';
+import secondImage from '@/assets/images/2.png';
+import thirdImage from '@/assets/images/3.jpg';
+import forthImage from '@/assets/images/4.jpg';
+import fifthImage from '@/assets/images/5.jpg';
 import { isMobile } from 'react-device-detect';
 
 function Home() {
@@ -30,6 +36,29 @@ function Home() {
     }, 2000);
   }, []);
 
+  const slides = [
+    {
+      image: firstImage,
+      content: 'Improving The Unimproved',
+    },
+    {
+      image: secondImage,
+      content: 'What we doing',
+    },
+    {
+      image: thirdImage,
+      content: 'About Elite Design Studio',
+    },
+    {
+      image: forthImage,
+      content: 'About Elite Design Studio',
+    },
+    {
+      image: fifthImage,
+      content: 'About Elite Design Studio',
+    },
+  ];
+
   return (
     <div className="home" ref={homeRef}>
       <div className="home__firstSection">
@@ -44,15 +73,16 @@ function Home() {
         ) : (
           <>
             <div className="home__banner">
-              <div className="home__banner__image">
+              {/* <div className="home__banner__image">
                 <h1>Improving The Unimproved</h1>
-              </div>
+              </div> */}
+              <SlideShow slides={slides} delay={7000} />
               <div className={`home__banner__drop ${bannerAnimated ? 'covered' : ''}`}></div>
             </div>
           </>
         )}
       </div>
-      <div className='home__mock'></div>
+      <div className="home__mock"></div>
       <div className="home__secondSection" ref={profileRef}>
         <Profile toggle={profileIsInViewport}></Profile>
       </div>

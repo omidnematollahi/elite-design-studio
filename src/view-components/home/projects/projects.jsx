@@ -21,7 +21,7 @@ import theSixteenthImage from '@/assets/images/projects/16-min.JPG';
 
 import { useHorizontalScroll } from '@/custom-hooks/useHorizontalScroll';
 
-const clamp = (value, clampAt = 5) => {
+const clamp = (value, clampAt = 0) => {
   if (value > 0) {
     return value > clampAt ? clampAt : value;
   } else {

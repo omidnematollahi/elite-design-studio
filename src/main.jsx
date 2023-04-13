@@ -10,6 +10,7 @@ import About from './views/about/about';
 import Contact from './views/contact/contact';
 import Services from './views/services/services';
 import Projects from './views/projects/projects';
+import Playground from './views/playground/playground';
 import ProjectDetail from './views/project-detail/project-detail';
 import 'animate.css';
 
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
       },
     ],
   },
+  {
+    path: "/playground",
+    element: <Playground />
+  }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(

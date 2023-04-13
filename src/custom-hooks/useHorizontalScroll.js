@@ -7,10 +7,8 @@ export function useHorizontalScroll() {
     if (el) {
       const onWheel = (e) => {
         if (e.deltaY == 0) return;
-        // e.preventDefault();
         let scrollDirection = e.deltaY > 0 ? 1 : -1;
         el.scrollBy({
-          // left: e.deltaY < 0 ? -300 : 300,
           left: e.deltaY < 0 ? -300 : 300,
           behavior: 'smooth',
         });

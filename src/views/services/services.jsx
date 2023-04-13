@@ -1,15 +1,15 @@
 import './services.scss';
 
 import SlideShow from '@/view-components/contact/slideshow';
-import firstImage from '@/assets/images/services/service10.jpg';
-import secondImage from '@/assets/images/services/service11.jpg';
-import thirdImage from '@/assets/images/services/service12.jpg';
+import firstImage from '@/assets/images/services/top1.jpg';
+import secondImage from '@/assets/images/services/top2.jpg';
+import thirdImage from '@/assets/images/services/top3.jpg';
 import interior from '@/assets/images/services/Interior.jpg';
-import exterior from '@/assets/images/services/Exterior.jpg';
-import landscape from '@/assets/images/services/Landscape.JPG';
-import space from '@/assets/images/services/space-planning.jpeg';
-import commercial from '@/assets/images/services/Commercial.jpg';
-import material from '@/assets/images/services/service5.jpg';
+import exterior from '@/assets/images/services/Exterior.png';
+import landscape from '@/assets/images/services/Landscape.png';
+import space from '@/assets/images/services/SpacePlaning.png';
+import commercial from '@/assets/images/services/Commercial.png';
+import material from '@/assets/images/services/material.jpg';
 import { useState, useRef } from 'react';
 import Footer from '@/components/footer/footer';
 import useIntersection from '../../custom-hooks/useIntersection';

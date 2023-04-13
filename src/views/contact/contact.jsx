@@ -1,10 +1,7 @@
 import './contact.scss';
 
 import SlideShow from '../../view-components/contact/slideshow';
-import firstImage from '../../assets/images/contact/contact1.jpg';
-import secondImage from '../../assets/images/contact/2.jpg';
-import thirdImage from '../../assets/images/contact/3.jpg';
-import forthImage from '../../assets/images/contact/4.jpg';
+import firstImage from '../../assets/images/contact/contact1.png';
 import Footer from '../../components/footer/footer';
 import { useState, useRef } from 'react';
 import useIntersection from '../../custom-hooks/useIntersection';
@@ -25,7 +22,7 @@ export default function Contact() {
     {
       image: firstImage,
       content: "Let's start your project",
-    }
+    },
   ];
 
   const [tabs, setTabs] = useState([

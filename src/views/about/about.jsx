@@ -5,10 +5,7 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './about.scss';
 
 import SlideShow from '@/view-components/contact/slideshow';
-import firstImage from '@/assets/images/contact/1.jpg';
-import secondImage from '@/assets/images/contact/2.jpg';
-import thirdImage from '@/assets/images/contact/3.jpg';
-import forthImage from '@/assets/images/contact/4.jpg';
+import topImage from '@/assets/images/about/top.png';
 import Footer from '@/components/footer/footer';
 
 import useIntersection from '@/custom-hooks/useIntersection';
@@ -76,19 +73,7 @@ function About() {
 
   const slides = [
     {
-      image: firstImage,
-      content: 'About Elite Design Studio',
-    },
-    {
-      image: secondImage,
-      content: 'What we doing',
-    },
-    {
-      image: thirdImage,
-      content: 'About Elite Design Studio',
-    },
-    {
-      image: forthImage,
+      image: topImage,
       content: 'About Elite Design Studio',
     },
   ];
@@ -99,8 +84,7 @@ function About() {
 
     gsap.utils.toArray('.about__why').forEach((section, i) => {
       section.bg = section.querySelector('.why-box');
-      // the first image (i === 0) should be handled differently because it should start at the very top.
-      // use function-based values in order to keep things responsive
+
       gsap.fromTo(
         section.bg,
         {
@@ -124,7 +108,7 @@ function About() {
 
   return (
     <div className="about">
-      <SlideShow slides={slides} delay={7000} />
+      <SlideShow slides={slides} delay={7000} dots={false} />
       <section className="about__description">
         <h1
           ref={descriptionTitleRef}

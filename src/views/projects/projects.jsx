@@ -1,16 +1,16 @@
 import './projects.scss';
 import Footer from '@/components/footer/footer';
 import Masonry from 'react-masonry-css';
-import { useRef, createRef } from 'react';
+import { useRef, createRef, useEffect, useState } from 'react';
 import useIntersection from '@/custom-hooks/useIntersection';
 import useOnLoadImages from '@/custom-hooks/useOnLoadImages';
 import { useNavigate } from 'react-router-dom';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
 
-import Checkbox from '@/components/checkbox/checkbox';
-
 import { PROJECT_LIST } from '@/constants/projects';
+import { FILTERS } from '@/constants/project-filters';
+import Dropdown from 'react-multilevel-dropdown';
 
 function Projects() {
   const wrapperRef = useRef(null);
@@ -22,10 +22,10 @@ function Projects() {
     700: 2,
     500: 1,
   };
-  const data = PROJECT_LIST;
   const footerRef = useRef(null);
   const footerIsInViewport = useIntersection(footerRef);
-  const elementsRef = useRef(data.map(() => createRef()));
+  const [projectList, setProjectList] = useState(PROJECT_LIST);
+  const elementsRef = useRef(projectList.map(() => createRef()));
   const elementsAreInViewport = [];
   elementsRef.current.forEach((elementRef, index) => {
     elementsAreInViewport[index] = useIntersection(elementRef, '-210px');
@@ -33,10 +33,6 @@ function Projects() {
 
   const goToDetails = (id) => {
     navigate(`/projects/${id}`);
-  };
-
-  const onChangeHandle = (event) => {
-    event.stopPropagation();
   };
 
   return (
@@ -51,14 +47,29 @@ function Projects() {
       </div>
       <section className="projects__filter animate__animated animate__backInUp">
         <span>Filters</span>
-        <span>
-          <input type="checkbox" id="commercialCheck" onChange={onChangeHandle} />
-          <label htmlFor="commercialCheck">Commercial</label>
-          <input type="checkbox" id="interiorCheck" onChange={onChangeHandle} />
-          <label htmlFor="interiorCheck">Interior Design</label>
-          <input type="checkbox" id="landscapeCheck" onChange={onChangeHandle} />
-          <label htmlFor="landscapeCheck">Landscape</label>
-        </span>
+        {FILTERS.map((filter) => {
+          return (
+            <>
+              {filter.children ? (
+                <Dropdown
+                  title={filter.category}
+                  key={filter.category}
+                  menuClassName="text-14 py-8 px-5 my-0 mx-16 border-b-1 border-solid border-blue hover:border-black"
+                >
+                  {filter.children
+                    ? filter.children.map((item) => (
+                        <Dropdown.Item position="right" key={item.category}>
+                          {item.category}
+                        </Dropdown.Item>
+                      ))
+                    : ''}
+                </Dropdown>
+              ) : (
+                <button className="filter-btn">{filter.category}</button>
+              )}
+            </>
+          );
+        })}
       </section>
       <div className="projects__items" ref={wrapperRef}>
         <Masonry
@@ -66,12 +77,10 @@ function Projects() {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {data.map((item, index) => {
+          {projectList.map((item, index) => {
             return (
               <div
-                className={`projects__item ${
-                  elementsAreInViewport[index] ? 'visible animate__animated animate__slideInUp' : ''
-                }`}
+                className={`projects__item ${elementsAreInViewport[index] ? 'visible' : ''}`}
                 ref={elementsRef.current[index]}
                 key={index}
                 onClick={() => goToDetails(item.id)}

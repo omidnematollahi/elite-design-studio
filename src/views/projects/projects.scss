@@ -32,12 +32,12 @@
 
     &__item {
         cursor: pointer;
-        opacity: 0;
+        // opacity: 0;
         overflow: hidden;
+        position: relative;
 
-        &.visible {
-            opacity: 1;
-        }
+        // &.visible {
+    //     opacity: 1;// }
 
         img {
             width: 100%;
@@ -115,6 +115,36 @@
             border: 1px solid #fff;
             transition: width 0.5s;
         }
+    }
+}
+
+._dropdown_15ws1_1 ._menu-left_15ws1_150 {
+    right: auto !important;
+    left: 0;
+}
+
+.filter-btn {
+    background-color: #EBECF0;
+    color: #172B4D;
+    cursor: pointer;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-size: 12px;
+    padding: 12px 16px;
+    margin: 0 1rem;
+    font-weight: 600;
+    line-height: 1;
+    border-width: 0;
+    letter-spacing: 0.6px;
+    height: 40px;
+    white-space: nowrap;
+    outline: none;
+    transition: background-color 160ms ease-out, box-shadow 160ms ease;
+
+    &:hover {
+        background-color: #C7C7C7;
     }
 }
 

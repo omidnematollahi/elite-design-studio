@@ -5,13 +5,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import './about.scss';
 
 import SlideShow from '@/view-components/contact/slideshow';
-import topImage from '@/assets/images/about/top.png';
+import topImage from '@/assets/images/about/top.jpg';
 import Footer from '@/components/footer/footer';
 
 import useIntersection from '@/custom-hooks/useIntersection';
 
+gsap.registerPlugin(ScrollTrigger);
 function About() {
-  gsap.registerPlugin(ScrollTrigger);
+  // const app = useRef();
+  // const [ctx] = useState(gsap.context(() => {}, app));
 
   const descriptionTitleRef = useRef(null);
   const descriptionContentRef = useRef(null);
@@ -82,6 +84,25 @@ function About() {
     const wrapper = document.querySelector('.wrapper');
     let getRatio = (el) => window.innerHeight / (window.innerHeight + el.offsetHeight);
 
+    // let panels = gsap.utils.toArray('.about__why'),
+    //   observer = ScrollTrigger.normalizeScroll(true),
+    //   scrollTween;
+
+    // panels.forEach((panel, i) => {
+    //   ScrollTrigger.create({
+    //     trigger: panel,
+    //     start: 'top bottom',
+    //     end: '+=199%',
+    //     onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
+    //   });
+    // });
+
+    // // just in case the user forces the scroll to an inbetween spot (like a momentum scroll on a Mac that ends AFTER the scrollTo tween finishes):
+    // ScrollTrigger.create({
+    //   start: 0,
+    //   end: 'max',
+    //   snap: 1 / (panels.length - 1),
+    // });
     gsap.utils.toArray('.about__why').forEach((section, i) => {
       section.bg = section.querySelector('.why-box');
 
@@ -105,6 +126,29 @@ function About() {
       );
     });
   }, []);
+
+  // useLayoutEffect(() => {
+  //   const wrapper = document.querySelector('.wrapper');
+  //   const ctx = gsap.context(() => {
+  //     const panels = gsap.utils.toArray('.about__why');
+  //     console.log(panels);
+  //     panels.forEach((panel, i) => {
+  //       ScrollTrigger.create({
+  //         trigger: panel,
+  //         scroller: wrapper,
+  //         start: 'top bottom',
+  //         end: '+=200%',
+  //         onToggle: (self) => self.isActive && !scrollTween.current && goToSection(i),
+  //       });
+  //     });
+  //     ScrollTrigger.create({
+  //       start: 0,
+  //       end: 'max',
+  //       snap: 1 / (panels.length - 1),
+  //     });
+  //   }, app);
+  //   return () => ctx.revert();
+  // }, []);
 
   return (
     <div className="about">

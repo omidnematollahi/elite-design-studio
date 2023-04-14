@@ -43,19 +43,19 @@ function Home() {
     },
     {
       image: secondImage,
-      content: 'What we doing',
+      content: 'Innovative Ideas Stylish Designs',
     },
     {
       image: thirdImage,
-      content: 'About Elite Design Studio',
+      content: 'Architecture And Interior Design',
     },
     {
       image: forthImage,
-      content: 'About Elite Design Studio',
+      content: 'Creating Places For Peoples',
     },
     {
       image: fifthImage,
-      content: 'About Elite Design Studio',
+      content: 'Create Your Comfort',
     },
   ];
 

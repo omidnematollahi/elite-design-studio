@@ -181,6 +181,34 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        width: 100%;
+        background-size: cover !important;
+        transform: translate(0, 0) !important;
+
+        &.quality {
+            z-index: 1;
+            background: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('../../assets/images/about/1.jpg') no-repeat center center;
+        }
+
+        &.projects {
+            z-index: 2;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/2.jpg') no-repeat center center;
+        }
+
+        &.supportive {
+            z-index: 3;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/3.jpg') no-repeat center center;
+        }
+
+        &.rate {
+            z-index: 4;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/4.jpg') no-repeat center center;
+        }
+
+        &.review {
+            z-index: 5;
+            background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/5.jpg') no-repeat center center;
+        }
 
         h1 {
             text-align: center;
@@ -504,26 +532,6 @@
                 opacity: 1;
             }
         }
-    }
-
-    &__quality {
-        background: linear-gradient(0deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/about/1.jpg') no-repeat center center;
-    }
-
-    &__projects {
-        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/2.jpg') no-repeat center center;
-    }
-
-    &__supportive {
-        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/3.jpg') no-repeat center center;
-    }
-
-    &__rate {
-        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/4.jpg') no-repeat center center;
-    }
-
-    &__review {
-        background: linear-gradient(0deg, rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../assets/images/about/5.jpg') no-repeat center center;
     }
 }
 

@@ -6,7 +6,7 @@ export default function ScrollToTop() {
 
   useEffect(() => {
     const element = document.getElementsByClassName('wrapper')[0];
-    element.scrollTo(0, 0);
+    window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;

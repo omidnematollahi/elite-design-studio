@@ -1,27 +1,26 @@
 import personalPicture from '@/assets/images/personal-picture.jpeg';
 import './profile.scss';
 import Count from '../count/count';
-import { useEffect } from 'react';
 
 export function Profile({ toggle }) {
-  useEffect(() => {
-    console.log(toggle);
-  }, []);
   const counterInfo = [
     {
       label: 'Years of Experience',
       number: '8',
       duration: 8,
+      extraCharacter: '+',
     },
     {
-      label: 'Success Project',
-      number: '1212',
+      label: 'Success Projects',
+      number: '100',
       duration: 10,
+      extraCharacter: '+',
     },
     {
-      label: 'Happy Customer',
-      number: '1002',
+      label: 'Happy Customers',
+      number: '500',
       duration: 10,
+      extraCharacter: '+',
     },
   ];
   return (
@@ -37,9 +36,9 @@ export function Profile({ toggle }) {
           <div className="profile__textContent">
             <h1>A PLACE WHERE IDEAS BECOME REALITY</h1>
             <p>
-              Our mission is to provide exceptional design to create elegant environment, improving
-              functionality, and increasing property value. We turn your vision into a stunning space
-              reflecting your needs, desires, and personality tailored to your lifestyle and budget.
+              Our mission is to provide exceptional design to create an elegant environment, improve
+              functionality, and increase property value. We turn your vision into a stunning space reflecting
+              your needs, desires, and personality tailored to your lifestyle and budget.
             </p>
             <div className="profile__statistics">
               {counterInfo.map((counter) => {

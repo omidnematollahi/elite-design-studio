@@ -27,19 +27,24 @@ function About() {
   const creativityTextRef = useRef(null);
   const supportRef = useRef(null);
   const supportTextRef = useRef(null);
+  const qualityRef = useRef(null);
   const qualityImageRef = useRef(null);
   const qualityHeadingRef = useRef(null);
   const qualityParagraphRef = useRef(null);
   const projectsImageRef = useRef(null);
+  const projectsRef = useRef(null);
   const projectsHeadingRef = useRef(null);
   const projectsParagraphRef = useRef(null);
   const supportiveImageRef = useRef(null);
+  const supportiveRef = useRef(null);
   const supportiveHeadingRef = useRef(null);
   const supportiveParagraphRef = useRef(null);
   const rateImageRef = useRef(null);
+  const rateRef = useRef(null);
   const rateHeadingRef = useRef(null);
   const rateParagraphRef = useRef(null);
   const reviewImageRef = useRef(null);
+  const reviewRef = useRef(null);
   const reviewHeadingRef = useRef(null);
   const reviewParagraphRef = useRef(null);
   const footerRef = useRef(null);
@@ -57,6 +62,7 @@ function About() {
   const supportIsInViewport = useIntersection(supportRef);
   const supportTextIsInViewport = useIntersection(supportTextRef);
   const qualityImageIsInViewport = useIntersection(qualityImageRef);
+  const qualityIsInViewport = useIntersection(qualityRef);
   const qualityHeadingIsInViewport = useIntersection(qualityHeadingRef);
   const qualityParagraphIsInViewport = useIntersection(qualityParagraphRef);
   const projectsImageIsInViewport = useIntersection(projectsImageRef);
@@ -81,74 +87,51 @@ function About() {
   ];
 
   useEffect(() => {
-    const wrapper = document.querySelector('.wrapper');
-    let getRatio = (el) => window.innerHeight / (window.innerHeight + el.offsetHeight);
-
-    // let panels = gsap.utils.toArray('.about__why'),
-    //   observer = ScrollTrigger.normalizeScroll(true),
-    //   scrollTween;
-
-    // panels.forEach((panel, i) => {
-    //   ScrollTrigger.create({
-    //     trigger: panel,
-    //     start: 'top bottom',
-    //     end: '+=199%',
-    //     onToggle: (self) => self.isActive && !scrollTween && goToSection(i),
-    //   });
-    // });
-
-    // // just in case the user forces the scroll to an inbetween spot (like a momentum scroll on a Mac that ends AFTER the scrollTo tween finishes):
-    // ScrollTrigger.create({
-    //   start: 0,
-    //   end: 'max',
-    //   snap: 1 / (panels.length - 1),
-    // });
-    gsap.utils.toArray('.about__why').forEach((section, i) => {
-      section.bg = section.querySelector('.why-box');
-
-      gsap.fromTo(
-        section.bg,
-        {
-          backgroundPosition: () => (i ? `50% ${-window.innerHeight * getRatio(section)}px` : '50% 0px'),
-        },
-        {
-          backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
-          ease: 'none',
-          scrollTrigger: {
-            scroller: wrapper,
-            trigger: section,
-            start: () => (i ? 'top bottom' : 'top top'),
-            end: 'bottom top',
-            scrub: true,
-            invalidateOnRefresh: true, // to make it responsive
-          },
-        },
-      );
+    // const wrapper = document.querySelector('.wrapper');
+    // let getRatio = (el) => window.innerHeight / (window.innerHeight + el.offsetHeight);
+    let panels = gsap.utils.toArray('.about__why');
+    panels.forEach((panel, i) => {
+      ScrollTrigger.create({
+        trigger: panel,
+        start: () => (panel.offsetHeight < window.innerHeight ? 'top top' : 'bottom bottom'), // if it's shorter than the viewport, we prefer to pin it at the top
+        pin: true,
+        pinSpacing: false,
+        end: 'bottom top',
+        scrub: true,
+      });
     });
+    // ScrollTrigger.create({
+    //   snap: {
+    //     snapTo: (progress, self) => {
+    //       let panelStarts = tops.map((st) => st.start), // an Array of all the starting scroll positions. We do this on each scroll to make sure it's totally responsive. Starting positions may change when the user resizes the viewport
+    //         snapScroll = gsap.utils.snap(panelStarts, self.scroll()); // find the closest one
+    //       return gsap.utils.normalize(0, ScrollTrigger.maxScroll(window), snapScroll); // snapping requires a progress value, so convert the scroll position into a normalized progress value between 0 and 1
+    //     },
+    //     duration: 0.8,
+    //   },
+    // });
+    // gsap.utils.toArray('.about__why').forEach((section, i) => {
+    //   section.bg = section.querySelector('.why-box');
+    //   gsap.fromTo(
+    //     section.bg,
+    //     {
+    //       backgroundPosition: () => (i ? `50% ${-window.innerHeight * getRatio(section)}px` : '50% 0px'),
+    //     },
+    //     {
+    //       backgroundPosition: () => `50% ${window.innerHeight * (1 - getRatio(section))}px`,
+    //       ease: 'none',
+    //       scrollTrigger: {
+    //         scroller: wrapper,
+    //         trigger: section,
+    //         start: () => (i ? 'top bottom' : 'top top'),
+    //         end: 'bottom top',
+    //         scrub: true,
+    //         invalidateOnRefresh: true, // to make it responsive
+    //       },
+    //     },
+    //   );
+    // });
   }, []);
-
-  // useLayoutEffect(() => {
-  //   const wrapper = document.querySelector('.wrapper');
-  //   const ctx = gsap.context(() => {
-  //     const panels = gsap.utils.toArray('.about__why');
-  //     console.log(panels);
-  //     panels.forEach((panel, i) => {
-  //       ScrollTrigger.create({
-  //         trigger: panel,
-  //         scroller: wrapper,
-  //         start: 'top bottom',
-  //         end: '+=200%',
-  //         onToggle: (self) => self.isActive && !scrollTween.current && goToSection(i),
-  //       });
-  //     });
-  //     ScrollTrigger.create({
-  //       start: 0,
-  //       end: 'max',
-  //       snap: 1 / (panels.length - 1),
-  //     });
-  //   }, app);
-  //   return () => ctx.revert();
-  // }, []);
 
   return (
     <div className="about">
@@ -166,10 +149,10 @@ function About() {
             descriptionContentIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
           }`}
         >
-          We practice a collaborative art, which begins by listening intently to our client’s goals and
-          desires. From initial concepts through to construction completion, we strive to transform their
-          aspirations into reality. We believe a fulfilling process for everyone involved ultimately leads to
-          the best possible result and the most rewarding experience.
+          We practice collaborative art, which begins by listening intently to our client’s goals and desires.
+          From initial concepts to construction completion, we strive to transform their aspirations into
+          reality. We believe a fulfilling process for everyone involved ultimately leads to the best possible
+          result and the most rewarding experience.
         </p>
       </section>
       <section className="about__mission">
@@ -177,9 +160,9 @@ function About() {
           <h1>OUR MISSION</h1>
           <p>
             It’s our mission at Architectural Design Associates to provide client focused service through our
-            responsible practice of Architecture. Our tradition of dedication, professionalism and outstanding
-            customer service is a testament to that mission as we strive each day for excellence in bringing
-            our valued clients’ ideas to life and we use design to create a better world.
+            responsible practice of Architecture. Our tradition of dedication, professionalism, and
+            outstanding customer service is a testament to that mission as we strive each day for excellence
+            in bringing our valued clients’ ideas to life, and we use design to create a better world.
           </p>
         </div>
       </section>
@@ -198,11 +181,11 @@ function About() {
           }`}
           ref={valuesDescriptionRef}
         >
-          We live our values; INTEGRITY, COOPARATION, CREATIVITY, and SUPORT are our guideposts. How we
+          We live our values; INTEGRITY, COOPERATION, CREATIVITY, and SUPPORT are our guideposts. How we
           conduct ourselves in business and the way we approach projects is a reflection of the values on
           which we were raised. We do what we say, and we say what we do. We are proud of our roots and of
           being trustworthy, family-loving, down-to-earth people. For our clients, we embrace hard work and
-          opportunity. We are dedicated to doing it the right way, always, to create value for the entire
+          opportunity. We are dedicated to doing it the right way, always to create value for the entire
           community.
         </p>
       </section>
@@ -224,7 +207,7 @@ function About() {
           >
             Maintaining architectural design integrity from the earliest conceptual design stages through
             construction doesn’t just make for better projects—it is also key to avoiding cost overruns.
-            Design integrity is about making sure the constructed reality matches your vision in the easiest,
+            Design integrity is about ensuring the constructed reality matches your vision in the easiest,
             most efficient manner possible.
           </p>
         </div>
@@ -243,9 +226,9 @@ function About() {
             }`}
             ref={cooperationTextRef}
           >
-            We Design, Document and Manage your project through a collaborative partnership with you.We are
+            We Design, Document, and Manage your project through a collaborative partnership with you. We are
             inspired by you. We use our eyes to observe and our ears to listen. We develop a deep
-            understanding of your needs and aspirations
+            understanding of your needs and aspirations.
           </p>
         </div>
         <div className="about__creativity">
@@ -263,9 +246,9 @@ function About() {
             }`}
             ref={creativityTextRef}
           >
-            We creatively work with you to explore possibilities, to challenge, and in turn to inspire .We
-            synthesize, we resolve. Artists only succeed if they struggle for excellence every day. We do not
-            accept mediocrity.
+            We creatively work with you to explore possibilities, challenge, and turn to inspire. We
+            synthesize, and we resolve. Artists only succeed if they struggle for excellence every day. We do
+            not accept mediocrity.
           </p>
         </div>
         <div className="about__support">
@@ -283,14 +266,14 @@ function About() {
             }`}
             ref={supportTextRef}
           >
-            Without our customers we are nothing. We have designed our systems to deliver the best experience
+            Without our customers, we are nothing. We have designed our systems to deliver the best experience
             and support to our customers. You and your needs are at the heart of all that we do.
           </p>
         </div>
       </section>
       <h1>Why Us</h1>
-      <section className="about__why">
-        <div className="about__quality why-box"></div>
+      <section className="about__why quality" ref={qualityRef}>
+        {/* <div className="about__ why-box"></div> */}
         <div
           className={`image ${
             qualityImageIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
@@ -343,8 +326,8 @@ function About() {
           <span>needs</span>
         </p>
       </section>
-      <section className="about__why">
-        <div className="about__projects why-box"></div>
+      <section className="about__why projects" ref={projectsRef}>
+        {/* <div className="about__ why-box"></div> */}
         <div
           className={`image ${
             projectsImageIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
@@ -415,8 +398,8 @@ function About() {
           <span>to.</span>
         </p>
       </section>
-      <section className="about__why">
-        <div className="about__supportive why-box"></div>
+      <section className="about__why supportive" ref={supportiveRef}>
+        {/* <div className="about__ why-box"></div> */}
         <div
           className={`image ${
             supportiveImageIsInViewport ? 'visible animate__animated animate__slideInUp' : ''
@@ -488,8 +471,8 @@ function About() {
           <span>support.</span>
         </p>
       </section>
-      <section className="about__why">
-        <div className="about__rate why-box"></div>
+      <section className="about__why rate" ref={rateRef}>
+        {/* <div className="about__ why-box"></div> */}
         <div
           className={`image ${rateImageIsInViewport ? 'visible animate__animated animate__slideInUp' : ''}`}
           ref={rateImageRef}
@@ -555,8 +538,8 @@ function About() {
           <span>rates</span>
         </p>
       </section>
-      <section className="about__why">
-        <div className="about__review why-box"></div>
+      <section className="about__why review" ref={reviewRef}>
+        {/* <div className="about__ why-box"></div> */}
         <div
           className={`image ${reviewImageIsInViewport ? 'visible animate__animated animate__slideInUp' : ''}`}
           ref={reviewImageRef}
@@ -607,7 +590,7 @@ function About() {
           <span>receive.</span>
         </p>
       </section>
-      <div ref={footerRef}>
+      <div style={{ marginTop: '30rem' }} ref={footerRef}>
         <Footer toggle={footerIsInViewport}></Footer>
       </div>
     </div>

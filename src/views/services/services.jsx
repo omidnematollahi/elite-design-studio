@@ -31,15 +31,15 @@ function Services() {
   const slides = [
     {
       image: firstImage,
-      content: 'Our Services',
+      content: 'Commercial Design',
     },
     {
       image: secondImage,
-      content: 'What we doing',
+      content: 'Interior Design',
     },
     {
       image: thirdImage,
-      content: 'About Elite Design Studio',
+      content: 'Landscape Design',
     },
   ];
 
@@ -72,7 +72,7 @@ function Services() {
 
   return (
     <div className="services">
-      <SlideShow slides={slides} delay={7000} />
+      <SlideShow slides={slides} textAnimation={true} delay={7000} />
       <div className="services__mock"></div>
       <div ref={descriptionRef}>
         <section

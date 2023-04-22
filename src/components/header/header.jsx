@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import logo from '@/assets/images/logo.png';
-// import whiteLogo from '../../assets/images/white-logo.png';
+import whiteLogo from '../../assets/images/white-logo.png';
 import './header.scss';
 
 export default function Header({ onToggleSideBar, sidebarVisibility }) {
+  const location = useLocation();
   const headerRef = useRef(null);
   const [scrolled, setScrolled] = useState(false);
   const [menuToggled, setMenuToggled] = useState(false);
@@ -12,7 +13,6 @@ export default function Header({ onToggleSideBar, sidebarVisibility }) {
   useEffect(() => {
     window.addEventListener('scroll', () => {
       var st = window.pageYOffset || document.documentElement.scrollTop;
-      console.log(st);
       if (st > lastScrollTop) {
         headerRef.current.style.background = '#fff';
         setScrolled(true);
@@ -35,37 +35,21 @@ export default function Header({ onToggleSideBar, sidebarVisibility }) {
   };
 
   return (
-    <div className="header" ref={headerRef}>
+    <div className="header" id="header" ref={headerRef}>
       <div className="header__logo">
         <Link to={'/'}>
-          <img src={logo} />
+          {location.pathname === '/projects' ? <img src={logo} /> : <img src={scrolled ? logo : whiteLogo} />}
         </Link>
-
-        {/* <img src={scrolled ? logo : whiteLogo} /> */}
       </div>
       <div className="header__menu">
-        {/* <ul className="header__nav">
-          <li>
-            <a className={`header__link ${scrolled ? 'header__link--scrolled' : ''}`}>About us</a>
-          </li>
-          <li>
-            <a className={`header__link ${scrolled ? 'header__link--scrolled' : ''}`}>Services</a>
-          </li>
-          <li>
-            <a className={`header__link ${scrolled ? 'header__link--scrolled' : ''}`}>Projects</a>
-          </li>
-          <li>
-            <a className={`header__link ${scrolled ? 'header__link--scrolled' : ''}`}>contact</a>
-          </li>
-        </ul> */}
         <div className="header__menu-navigator">
           <a
             className={`hamburger ${scrolled ? 'header__link--scrolled' : ''} ${menuToggled ? 'open' : ''}`}
             onClick={toggleSidebar}
           >
-            <span></span>
-            <span></span>
-            <span></span>
+            <span className={`${scrolled || location.pathname === '/projects' ? 'scrolled' : ''}`}></span>
+            <span className={`${scrolled || location.pathname === '/projects' ? 'scrolled' : ''}`}></span>
+            <span className={`${scrolled || location.pathname === '/projects' ? 'scrolled' : ''}`}></span>
           </a>
         </div>
       </div>

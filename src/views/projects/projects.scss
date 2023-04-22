@@ -6,7 +6,7 @@
 
 
     &__description {
-        padding: 2rem 10rem;
+        padding: 5rem 10rem;
 
         @include breakpoint(small) {
             padding: 5px 20px;
@@ -32,12 +32,13 @@
 
     &__item {
         cursor: pointer;
-        // opacity: 0;
+        opacity: 0;
         overflow: hidden;
         position: relative;
 
-        // &.visible {
-    //     opacity: 1;// }
+        &.visible {
+            opacity: 1;
+        }
 
         img {
             width: 100%;

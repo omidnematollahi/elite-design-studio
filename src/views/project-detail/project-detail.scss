@@ -14,3 +14,17 @@
     width: 100%;
   }
 }
+
+.image-gallery-thumbnail {
+  &.active {
+    border: 4px solid #C18F5A !important;
+  }
+}
+
+.image-gallery-icon {
+  outline: none !important;
+}
+
+.image-gallery-icon:hover {
+  color: #C18F5A !important;
+}

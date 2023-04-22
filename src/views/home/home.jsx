@@ -21,19 +21,22 @@ function Home() {
   const projectsRef = useRef(null);
   const commentsRef = useRef(null);
   const footerRef = useRef(null);
-  const profileIsInViewport = useIntersection(profileRef, '300px');
+  const profileIsInViewport = useIntersection(profileRef);
   const projectsIsInViewport = useIntersection(projectsRef);
   const commentsIsInViewport = useIntersection(commentsRef);
   const footerIsInViewport = useIntersection(footerRef);
 
   useEffect(() => {
-    console.log(profileRef);
     setTimeout(() => {
       setFirstLoad(true);
       setTimeout(() => {
         setBannerAnimated(true);
       }, 100);
     }, 2000);
+
+    window.addEventListener('scroll', () => {
+      console.log(projectsIsInViewport);
+    });
   }, []);
 
   const slides = [
@@ -43,19 +46,19 @@ function Home() {
     },
     {
       image: secondImage,
-      content: 'Innovative Ideas Stylish Designs',
+      content: 'Improving The Unimproved',
     },
     {
       image: thirdImage,
-      content: 'Architecture And Interior Design',
+      content: 'Improving The Unimproved',
     },
     {
       image: forthImage,
-      content: 'Creating Places For Peoples',
+      content: 'Improving The Unimproved',
     },
     {
       image: fifthImage,
-      content: 'Create Your Comfort',
+      content: 'Improving The Unimproved',
     },
   ];
 

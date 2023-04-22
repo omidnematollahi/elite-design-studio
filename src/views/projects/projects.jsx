@@ -25,6 +25,7 @@ function Projects() {
   const footerRef = useRef(null);
   const footerIsInViewport = useIntersection(footerRef);
   const [projectList, setProjectList] = useState(PROJECT_LIST);
+  const [filteredProjects, setFilteredProjects] = useState(PROJECT_LIST);
   const elementsRef = useRef(projectList.map(() => createRef()));
   const elementsAreInViewport = [];
   elementsRef.current.forEach((elementRef, index) => {
@@ -33,6 +34,10 @@ function Projects() {
 
   const goToDetails = (id) => {
     navigate(`/projects/${id}`);
+  };
+
+  const filterList = (category) => {
+    setFilteredProjects(projectList.filter((project) => project.category === category));
   };
 
   return (
@@ -65,7 +70,9 @@ function Projects() {
                     : ''}
                 </Dropdown>
               ) : (
-                <button className="filter-btn">{filter.category}</button>
+                <button className="filter-btn" onClick={() => filterList(filter.category)}>
+                  {filter.category}
+                </button>
               )}
             </>
           );
@@ -77,10 +84,12 @@ function Projects() {
           className="my-masonry-grid"
           columnClassName="my-masonry-grid_column"
         >
-          {projectList.map((item, index) => {
+          {filteredProjects.map((item, index) => {
             return (
               <div
-                className={`projects__item ${elementsAreInViewport[index] ? 'visible' : ''}`}
+                className={`projects__item ${
+                  elementsAreInViewport[index] ? 'visible animate__animated animate__slideInUp' : ''
+                }`}
                 ref={elementsRef.current[index]}
                 key={index}
                 onClick={() => goToDetails(item.id)}

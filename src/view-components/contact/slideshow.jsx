@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import './slideshow.scss';
 
-export default function Slideshow({ slides, delay, dots = true }) {
+export default function Slideshow({ slides, delay, dots = true, textAnimation = false }) {
   const [index, setIndex] = useState(null);
   const timeoutRef = useRef(null);
   const sliderRef = useRef(null);
@@ -22,17 +22,21 @@ export default function Slideshow({ slides, delay, dots = true }) {
       'scroll',
       function () {
         var st = window.pageYOffset || document.documentElement.scrollTop;
-        let height = sliderRef.current.offsetHeight;
+        let height = sliderRef?.current?.offsetHeight;
         let doc = document.documentElement;
         let top = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
         if (st > lastScrollTop) {
           // downscroll code
           const finalOpacity = 1 - (height - top) / height;
-          backdropRef.current.style.opacity = finalOpacity;
+          if (backdropRef && backdropRef.current) {
+            backdropRef.current.style.opacity = finalOpacity;
+          }
         } else if (st < lastScrollTop) {
           // upscroll code
           const finalOpacity = 0;
-          backdropRef.current.style.opacity = finalOpacity;
+          if (backdropRef && backdropRef.current) {
+            backdropRef.current.style.opacity = finalOpacity;
+          }
         }
         lastScrollTop = st <= 0 ? 0 : st;
       },
@@ -64,7 +68,9 @@ export default function Slideshow({ slides, delay, dots = true }) {
               display: `${index === idx ? 'flex' : 'none'}`,
             }}
           >
-            <h1 className="animate__animated animate__slideInLeft">{slide.content}</h1>
+            <h1 className={`${textAnimation ? 'animate__animated animate__slideInLeft' : ''}`}>
+              {slide.content}
+            </h1>
           </div>
         ))}
       </div>

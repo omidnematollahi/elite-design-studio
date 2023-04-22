@@ -8,6 +8,29 @@
     opacity: 1;
   }
 
+  &__star {
+    color: #C18F5A;
+  }
+
+  &__rate {
+    margin-top: 1rem;
+  }
+
+  &__profile {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  &__text {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    white-space: pre-wrap;
+    max-height: 300px;
+  }
+
   &__slide {
     padding: 1rem;
     position: relative;
@@ -16,9 +39,10 @@
       padding: 1rem;
       display: flex !important;
       flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 0 10px #aaaaaa;
+      // align-items: center;
+      // justify-content: center;
+      box-shadow: 0 0 4px #aaaaaa;
+      max-height: 300px;
       min-height: 300px;
       border-radius: 0.7rem;
     }

@@ -1,29 +1,29 @@
 export const FILTERS = [
   {
-    category: 'Commercial',
+    category: 'commercial',
   },
   {
-    category: 'Interior Design',
-    children: [
-      {
-        category: 'Bathroom',
-      },
-      {
-        category: 'Bedroom',
-      },
-      {
-        category: 'Kitchen',
-      },
-      {
-        category: 'Closet',
-      },
-      {
-        category: 'Living Room',
-      },
-    ],
+    category: 'interior',
+    // children: [
+    //   {
+    //     category: 'Bathroom',
+    //   },
+    //   {
+    //     category: 'Bedroom',
+    //   },
+    //   {
+    //     category: 'Kitchen',
+    //   },
+    //   {
+    //     category: 'Closet',
+    //   },
+    //   {
+    //     category: 'Living Room',
+    //   },
+    // ],
   },
   {
-    category: 'Landscape',
+    category: 'landscape',
   },
 ];
 

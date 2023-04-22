@@ -3,7 +3,6 @@
     top: 0;
     left: 0;
     width: 100%;
-    background: #fff;
     transition: all 0.5s;
     z-index: 9;
     display: flex;
@@ -83,7 +82,7 @@
                 position: absolute;
                 height: 2px;
                 width: 80%;
-                background: #2b2b2b;
+                background: #ffffff;
                 border-radius: 9px;
                 opacity: 1;
                 left: 10%;
@@ -95,6 +94,10 @@
                 -moz-transition: .25s ease-in-out;
                 -o-transition: .25s ease-in-out;
                 transition: .25s ease-in-out;
+
+                &.scrolled {
+                    background: #2b2b2b;
+                }
 
                 &:nth-child(1) {
                     top: 10px;

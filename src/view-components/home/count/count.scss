@@ -18,6 +18,10 @@
         text-align: center;
     }
 
+    &__char {
+        display: inline-block;
+    }
+
     &__number {
         font-size: 2rem;
         font-weight: bold;

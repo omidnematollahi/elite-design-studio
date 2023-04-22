@@ -12,13 +12,13 @@ export function Profile({ toggle }) {
     },
     {
       label: 'Success Projects',
-      number: '100',
+      number: '500',
       duration: 10,
       extraCharacter: '+',
     },
     {
       label: 'Happy Customers',
-      number: '500',
+      number: '100',
       duration: 10,
       extraCharacter: '+',
     },

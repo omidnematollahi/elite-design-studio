@@ -33,10 +33,6 @@ function Home() {
         setBannerAnimated(true);
       }, 100);
     }, 2000);
-
-    window.addEventListener('scroll', () => {
-      console.log(projectsIsInViewport);
-    });
   }, []);
 
   const slides = [
@@ -76,9 +72,6 @@ function Home() {
         ) : (
           <>
             <div className="home__banner">
-              {/* <div className="home__banner__image">
-                <h1>Improving The Unimproved</h1>
-              </div> */}
               <SlideShow slides={slides} delay={7000} />
               <div className={`home__banner__drop ${bannerAnimated ? 'covered' : ''}`}></div>
             </div>

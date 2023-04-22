@@ -38,7 +38,11 @@ export default function Header({ onToggleSideBar, sidebarVisibility }) {
     <div className="header" id="header" ref={headerRef}>
       <div className="header__logo">
         <Link to={'/'}>
-          {location.pathname === '/projects' ? <img src={logo} /> : <img src={scrolled ? logo : whiteLogo} />}
+          {location.pathname.startsWith('/projects') ? (
+            <img src={logo} />
+          ) : (
+            <img src={scrolled ? logo : whiteLogo} />
+          )}
         </Link>
       </div>
       <div className="header__menu">
@@ -47,9 +51,15 @@ export default function Header({ onToggleSideBar, sidebarVisibility }) {
             className={`hamburger ${scrolled ? 'header__link--scrolled' : ''} ${menuToggled ? 'open' : ''}`}
             onClick={toggleSidebar}
           >
-            <span className={`${scrolled || location.pathname === '/projects' ? 'scrolled' : ''}`}></span>
-            <span className={`${scrolled || location.pathname === '/projects' ? 'scrolled' : ''}`}></span>
-            <span className={`${scrolled || location.pathname === '/projects' ? 'scrolled' : ''}`}></span>
+            <span
+              className={`${scrolled || location.pathname.startsWith('/projects') ? 'scrolled' : ''}`}
+            ></span>
+            <span
+              className={`${scrolled || location.pathname.startsWith('/projects') ? 'scrolled' : ''}`}
+            ></span>
+            <span
+              className={`${scrolled || location.pathname.startsWith('/projects') ? 'scrolled' : ''}`}
+            ></span>
           </a>
         </div>
       </div>

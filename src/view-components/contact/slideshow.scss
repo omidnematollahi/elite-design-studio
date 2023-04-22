@@ -68,6 +68,10 @@
             position: fixed;
             top: 0;
         }
+
+        >h1 {
+            max-width: 40ch;
+        }
     }
 
     /* Buttons */

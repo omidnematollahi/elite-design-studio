@@ -10,14 +10,7 @@ import LetteredAvatar from 'react-lettered-avatar';
 
 export const Comments = ({ toggle }) => {
   const slider = useRef(null);
-  useEffect(() => {
-    window.addEventListener('wheel', (e) => {
-      if (toggle) {
-        console.log(e.wheelDelta);
-        slide(e.wheelDelta);
-      }
-    });
-  }, []);
+
   const settings = {
     className: 'center',
     autoplay: true,
@@ -39,9 +32,6 @@ export const Comments = ({ toggle }) => {
       },
     ],
   };
-  const slide = (y) => {
-    y > 0 ? slider.slickNext() : slider.slickPrev();
-  };
   const numberOfStars = 5; // or more.
   let stars = [];
 
@@ -50,7 +40,9 @@ export const Comments = ({ toggle }) => {
   }
   return (
     <div className={`comments ${toggle ? 'toggled animate__animated animate__slideInUp' : ''}`}>
-      <h1 className="comments__heading">Whaterver good things we build end up building us</h1>
+      <h1 className="comments__heading">
+        Whaterver good things we build <br /> end up building us
+      </h1>
       <Slider {...settings} ref={slider}>
         {COMMENTS.map((comment) => {
           return (

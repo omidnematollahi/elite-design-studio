@@ -59,7 +59,6 @@ export function Projects({ toggle }) {
   });
   return (
     <div className={`projects-section ${toggle ? 'visible animate__animated animate__slideInUp' : ''}`}>
-      <h1>Projects</h1>
       <div className={`projects-section__content`} ref={scrollRef} {...bind()}>
         {projectsList.map((src) => (
           <animated.div

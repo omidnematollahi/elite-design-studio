@@ -37,7 +37,9 @@ function Projects() {
   };
 
   const filterList = (category) => {
-    setFilteredProjects(projectList.filter((project) => project.category === category));
+    if (category !== 'all projects') {
+      setFilteredProjects(projectList.filter((project) => project.category === category));
+    } else setFilteredProjects(projectList);
   };
 
   return (

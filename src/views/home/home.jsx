@@ -23,6 +23,7 @@ function Home() {
   const footerRef = useRef(null);
   const profileIsInViewport = useIntersection(profileRef);
   const projectsIsInViewport = useIntersection(projectsRef);
+  const projectsMostOnInViewport = useIntersection(projectsRef, '-330px');
   const commentsIsInViewport = useIntersection(commentsRef);
   const footerIsInViewport = useIntersection(footerRef);
 
@@ -34,6 +35,19 @@ function Home() {
       }, 100);
     }, 2000);
   }, []);
+
+  useEffect(() => {
+    const element = projectsRef.current;
+    const headerOffset = 57;
+    if (projectsRef && projectsMostOnInViewport) {
+      var elementPosition = element.getBoundingClientRect().top;
+      var offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth',
+      });
+    }
+  }, [projectsMostOnInViewport]);
 
   const slides = [
     {
@@ -85,6 +99,7 @@ function Home() {
       <div className="home_forthSection" ref={commentsRef}>
         <Comments toggle={commentsIsInViewport}></Comments>
       </div>
+      <h1>Projects</h1>
       <div className="home_thirdSection" ref={projectsRef}>
         <Projects toggle={projectsIsInViewport}></Projects>
       </div>

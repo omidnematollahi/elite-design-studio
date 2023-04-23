@@ -1,5 +1,8 @@
 export const FILTERS = [
   {
+    category: 'all projects',
+  },
+  {
     category: 'commercial',
   },
   {

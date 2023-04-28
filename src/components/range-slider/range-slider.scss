@@ -10,11 +10,10 @@ $thumb-size: 16px;
     appearance: none;
     pointer-events: all;
     width: $thumb-size;
-    height: $thumb-size;
+    height: calc(#{$thumb-size} * 4);
     border-radius: 0px;
     border: 0 none;
     cursor: grab;
-    background-color: red;
 
     &:active {
         cursor: grabbing;
@@ -25,9 +24,8 @@ $thumb-size: 16px;
     position: relative;
     display: flex;
     align-items: center;
-    margin: 40px 16px;
-    padding-top: 1.6rem;
-    height: calc(#{$thumb-size} + 1.6rem);
+    margin: 16px;
+    height: calc(#{$thumb-size} + 4rem);
 }
 
 .input-wrapper {
@@ -83,6 +81,7 @@ $thumb-size: 16px;
     width: 100%;
     top: 50%;
     transform: translateY(-50%);
+    cursor: pointer;
     height: 10px;
     border-radius: 3px;
     background: #C9C9C9;
@@ -98,18 +97,16 @@ $thumb-size: 16px;
 .inner-rail {
     position: absolute;
     height: 100%;
-    // width: 100%;
-    // background: linear-gradient(to right, #B9AEFF, #0F0067);
-    // opacity: 0.5;
-    transition: all 0.5s;
+    transition: all 0.3s;
 }
 
 .control {
     position: absolute;
     top: 100%;
-    width: 24px;
-    height: 24px;
+    width: calc(#{$thumb-size} * 1.5);
+    height: calc(#{$thumb-size} * 1.5);
     background-image: url("../../assets/images/triangle.png");
-    z-index: 9999;
-    transition: all 0.5;
+    z-index: 1;
+    // cursor: grab;
+    transition: left 0.3s;
 }

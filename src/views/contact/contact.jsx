@@ -6,6 +6,9 @@ import Footer from '../../components/footer/footer';
 import { useState, useRef } from 'react';
 import useIntersection from '../../custom-hooks/useIntersection';
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function Contact() {
   const [activeIndex, setActiveIndex] = useState(0);
   const handleClick = (index) => setActiveIndex(index);
@@ -36,8 +39,31 @@ export default function Contact() {
     },
   ]);
 
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [type, setType] = useState('');
+  const [message, setMessage] = useState('');
+  const endpoint = 'https://wk6cn3gzmkinqppdowvrz2dokq0xuzrf.lambda-url.us-west-2.on.aws/'; // Add this later
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const data = { fullName, email, message, type };
+    const fetchPromise = fetch(endpoint, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      body: JSON.stringify(data),
+    });
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        toast('Your message sent successfully');
+      });
+  };
+
   return (
     <div className="contact">
+      <ToastContainer />
       <SlideShow slides={images} delay={7000} dots={false} />
       <section
         className={`contact__content ${
@@ -72,24 +98,49 @@ export default function Contact() {
             Share everything you’re thinking about, hoping for, and needing from a space. ELITE raises your
             expectations by elevating your areas.
           </p>
-          <form className="contact__project-form">
+          <form className="contact__project-form" action={endpoint} onSubmit={handleSubmit} method="POST">
             <div className="contact__project-form__group">
               <label htmlFor="fullName">Full Name *</label>
-              <input type="text" id="fullName" placeholder="" />
+              <input
+                type="text"
+                id="fullName"
+                placeholder=""
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+              />
             </div>
             <div className="contact__project-form__group">
-              <label htmlFor="fullName">Email *</label>
-              <input type="text" id="fullName" placeholder="" />
+              <label htmlFor="email">Email *</label>
+              <input
+                type="text"
+                id="email"
+                placeholder=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
             </div>
             <div className="contact__project-form__group">
-              <label htmlFor="fullName">Type of project *</label>
-              <input type="text" id="fullName" placeholder="" />
+              <label htmlFor="type">Type of project *</label>
+              <input
+                type="text"
+                id="type"
+                placeholder=""
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+              />
             </div>
             <div className="contact__project-form__group">
-              <label htmlFor="fullName">Send Message *</label>
-              <textarea placeholder="Text Here..."></textarea>
+              <label htmlFor="message">Send Message *</label>
+              <textarea
+                id="message"
+                placeholder="Text Here..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
             </div>
-            <button className="contact__project-form__button">Submit</button>
+            <button type="submit" className="contact__project-form__button">
+              Submit
+            </button>
           </form>
         </div>
         <div className={`contact__tab-content contact ${checkActive(1, 'active')}`}>

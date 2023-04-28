@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import './range-slider.scss';
 
 export function RangeSlider({ min, max, value, step, onChange }) {
@@ -15,6 +15,16 @@ export function RangeSlider({ min, max, value, step, onChange }) {
     const newVal = +e.target.value;
     if (!value) setRangeValue(newVal);
     onChange(newVal);
+  };
+
+  const changeInputValue = (e) => {
+    let bounds = rangeRef.current.getBoundingClientRect();
+    let x = e.clientX - bounds.left;
+    let y = e.clientY - bounds.top;
+    const percent = Math.round((x * 100) / bounds.width);
+    const newValue = Math.ceil(max * (percent / 100));
+    setRangeValue(newValue);
+    onChange(newValue);
   };
 
   const valuePosition = ((rangeValue - min) / (max - min)) * 100;
@@ -36,8 +46,8 @@ export function RangeSlider({ min, max, value, step, onChange }) {
       </div>
 
       <div className="control-wrapper">
-        <div className="control" style={{ left: `${valuePosition - 1}%` }} />
-        <div className="rail">
+        <div className="control" id="control" style={{ left: `${valuePosition - 1}%` }} />
+        <div className="rail" onClick={changeInputValue}>
           {Array.from({ length: separatorSize }, (_, i) => (
             <span
               className={i > 0 ? 'rail__separator' : ''}

@@ -18,6 +18,22 @@
             bottom: 0;
         }
 
+        &.colored-sidebar2 {
+            >h2 {
+                color: #000000;
+                z-index: 2;
+            }
+        }
+
+        >h2 {
+            position: absolute;
+            top: 1rem;
+            left: 1rem;
+            color: #ffffff;
+            z-index: 2;
+
+        }
+
         h1,
         h2 {
             margin: 0;

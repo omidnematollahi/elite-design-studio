@@ -36,24 +36,33 @@ function App() {
     setSideBarFlag(sideBarToggleFlag);
   };
   const routeList = [
-    { name: 'About us', path: '/about', expand: false, view: <About onSidebarChange={onToggleSideBar} /> },
+    {
+      name: 'About us',
+      path: '/about',
+      expand: false,
+      view: <About onSidebarChange={onToggleSideBar} />,
+      title: 'About',
+    },
     {
       name: 'Projects',
       path: '/projects',
       expand: false,
       view: <Projects onSidebarChange={onToggleSideBar} />,
+      title: 'Projects',
     },
     {
       name: 'Contact us',
       path: '/contact',
       expand: false,
       view: <Contact onSidebarChange={onToggleSideBar} />,
+      title: 'Contact',
     },
     {
       name: 'Services',
       path: '/services',
       expand: false,
       view: <Services onSidebarChange={onToggleSideBar} />,
+      title: 'Services',
     },
   ];
   const [menuItems, setMenuItems] = useState(routeList);

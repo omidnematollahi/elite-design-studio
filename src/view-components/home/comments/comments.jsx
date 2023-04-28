@@ -30,6 +30,13 @@ export const Comments = ({ toggle }) => {
           slidesToScroll: 1,
         },
       },
+      {
+        breakpoint: 720,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+        },
+      },
     ],
   };
   const numberOfStars = 5; // or more.
@@ -43,6 +50,13 @@ export const Comments = ({ toggle }) => {
       <h1 className="comments__heading">
         Whaterver good things we build <br /> end up building us
       </h1>
+      <div className="comments__rate">
+        <h2>4.9</h2>
+        {stars.map((star) => {
+          return star;
+        })}
+        <h2> (179) </h2>
+      </div>
       <Slider {...settings} ref={slider}>
         {COMMENTS.map((comment) => {
           return (

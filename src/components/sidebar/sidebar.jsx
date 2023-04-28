@@ -61,6 +61,7 @@ export default function SideBar({
             }`}
             onClick={() => onMenuItemClick(idx)}
           >
+            <h2>{menuItem.title}</h2>
             <div className="sidebar__item__content">{menuItem.view}</div>
           </div>
         );

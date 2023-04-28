@@ -30,9 +30,9 @@ export function Profile({ toggle }) {
           <img src={personalPicture} />
         </div>
         <div className={`profile__about  ${toggle ? 'visible animate__animated animate__backInUp' : ''}`}>
-          <div className="profile__title">
+          {/* <div className="profile__title">
             <h2>About Elite Design Studio</h2>
-          </div>
+          </div> */}
           <div className="profile__textContent">
             <h1>A PLACE WHERE IDEAS BECOME REALITY</h1>
             <p>

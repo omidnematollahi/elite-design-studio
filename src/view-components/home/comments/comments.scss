@@ -13,7 +13,13 @@
   }
 
   &__rate {
-    margin-top: 1rem;
+    display: flex;
+    align-items: center;
+    margin: 1rem 0.5rem 0;
+
+    h2 {
+      margin: 0 0.5rem;
+    }
   }
 
   &__profile {
@@ -50,7 +56,7 @@
     &__icon {
       position: absolute;
       top: 10%;
-      right: 5%;
+      right: 7%;
       font-size: 2rem;
       color: #a3a3a3;
     }

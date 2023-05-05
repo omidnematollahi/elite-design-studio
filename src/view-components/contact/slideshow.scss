@@ -42,13 +42,13 @@
         }
 
         &.active {
-            -webkit-animation: zoom-a 10s linear infinite alternate;
+            -webkit-animation: zoom-a 3s linear infinite alternate;
             /* Safari 4+ */
-            -moz-animation: zoom-a 10s linear infinite alternate;
+            -moz-animation: zoom-a 3s linear infinite alternate;
             /* Fx 5+ */
-            -o-animation: zoom-a 10s linear infinite alternate;
+            -o-animation: zoom-a 3s linear infinite alternate;
             /* Opera 12+ */
-            animation: zoom-a 10s linear infinite alternate;
+            animation: zoom-a 3s linear infinite alternate;
             /* IE 10+, Fx 29+ */
             justify-content: center;
             align-items: center;
@@ -71,6 +71,7 @@
 
         >h1 {
             max-width: 40ch;
+            font-size: calc(1rem + 2vw) !important;
         }
     }
 
@@ -102,40 +103,40 @@
 
 @-webkit-keyframes zoom-a {
     0% {
-        background-size: 105% auto;
+        background-size: 125% auto;
     }
 
     100% {
-        background-size: 120% auto;
+        background-size: 130% auto;
     }
 }
 
 @-moz-keyframes zoom-a {
     0% {
-        background-size: 105% auto;
+        background-size: 125% auto;
     }
 
     100% {
-        background-size: 120% auto;
+        background-size: 130% auto;
     }
 }
 
 @-o-keyframes zoom-a {
     0% {
-        background-size: 105% auto;
+        background-size: 125% auto;
     }
 
     100% {
-        background-size: 120% auto;
+        background-size: 130% auto;
     }
 }
 
 @keyframes zoom-a {
     0% {
-        background-size: 105% auto;
+        background-size: 125% auto;
     }
 
     100% {
-        background-size: 120% auto;
+        background-size: 130% auto;
     }
 }

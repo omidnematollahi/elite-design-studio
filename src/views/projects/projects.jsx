@@ -5,8 +5,10 @@ import { useRef, createRef, useEffect, useState } from 'react';
 import useIntersection from '@/custom-hooks/useIntersection';
 import useOnLoadImages from '@/custom-hooks/useOnLoadImages';
 import { useNavigate } from 'react-router-dom';
-import Skeleton from 'react-loading-skeleton';
+import LazyLoad from 'react-lazy-load';
+import Skeleton, { SkeletonTheme } from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
+import { isMobile } from 'react-device-detect';
 
 import { PROJECT_LIST } from '@/constants/projects';
 import { FILTERS } from '@/constants/project-filters';
@@ -29,7 +31,7 @@ function Projects() {
   const elementsRef = useRef(projectList.map(() => createRef()));
   const elementsAreInViewport = [];
   elementsRef.current.forEach((elementRef, index) => {
-    elementsAreInViewport[index] = useIntersection(elementRef, '-210px');
+    elementsAreInViewport[index] = !isMobile ? useIntersection(elementRef, '-210px') : true;
   });
 
   const goToDetails = (id) => {
@@ -96,7 +98,15 @@ function Projects() {
                 key={index}
                 onClick={() => goToDetails(item.id)}
               >
-                {imagesLoaded ? <img src={item.images[0]} /> : <Skeleton count={5} />}
+                <LazyLoad>
+                  <SkeletonTheme color="#F5F5F5" highlightColor="#ffffff">
+                    {imagesLoaded ? (
+                      <img loading="lazy" src={item.images[0]} />
+                    ) : (
+                      <Skeleton width={200} height={400} />
+                    )}
+                  </SkeletonTheme>
+                </LazyLoad>
                 <span className="projects__title">{item.name}</span>
                 <span className="projects__category">{item.category}</span>
                 <div className="projects__hover-box">

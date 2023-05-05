@@ -1,3 +1,5 @@
+@import '../../../assets/scss/media.scss';
+
 .comments {
   opacity: 0;
   width: 100%;
@@ -12,10 +14,41 @@
     color: #C18F5A;
   }
 
-  &__rate {
+  &__stars {
     display: flex;
     align-items: center;
-    margin: 1rem 0.5rem 0;
+    margin: 1rem 1rem 0;
+  }
+
+  &__write {
+    display: flex;
+    align-items: center;
+    margin: 1rem 1rem 0;
+  }
+
+  &__btn {
+    display: flex;
+    height: 48px;
+    cursor: pointer;
+    background-color: #C18F5A;
+    color: #ffffff;
+    border-radius: 5px;
+    padding: 0 2rem;
+    align-items: center;
+    border: none;
+    outline: none;
+  }
+
+  &__rate {
+    display: flex;
+
+    &.top {
+      justify-content: space-between;
+
+      @include breakpoint(small) {
+        flex-direction: column;
+      }
+    }
 
     h2 {
       margin: 0 0.5rem;

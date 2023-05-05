@@ -1,10 +1,16 @@
 import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { Button } from '@/components/button/button';
+
 import './home.scss';
 import useIntersection from '../../custom-hooks/useIntersection';
 import { Profile } from '../../view-components/home/profile/profile';
 import { Projects } from '../../view-components/home/projects/projects';
 import { Footer } from '../../components/footer/footer';
 import { Comments } from '../../view-components/home/comments/comments';
+import Modal from '@/components/modal/modal';
 import SlideShow from '@/view-components/contact/slideshow';
 import firstImage from '@/assets/images/1.jpg';
 import secondImage from '@/assets/images/2.png';
@@ -13,7 +19,19 @@ import forthImage from '@/assets/images/4.jpg';
 import fifthImage from '@/assets/images/5.jpg';
 import { isMobile } from 'react-device-detect';
 
+const ModalContent = styled.div`
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h1 {
+    color: #5c3aff;
+  }
+`;
+
 function Home() {
+  const [isOpen, setIsOpen] = useState(false);
   const [firstLoad, setFirstLoad] = useState(false);
   const [bannerAnimated, setBannerAnimated] = useState(false);
   const homeRef = useRef(null);
@@ -49,6 +67,11 @@ function Home() {
     }
   }, [projectsMostOnInViewport]);
 
+  function handlOpenModal(open) {
+    console.log('close modal');
+    setIsOpen(open);
+  }
+
   const slides = [
     {
       image: firstImage,
@@ -72,8 +95,36 @@ function Home() {
     },
   ];
 
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [type, setType] = useState('');
+  const [message, setMessage] = useState('');
+
+  const [loading, setLoading] = useState(false);
+  const endpoint = 'https://wk6cn3gzmkinqppdowvrz2dokq0xuzrf.lambda-url.us-west-2.on.aws/'; // Add this later
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setLoading(true);
+    const data = { fullName, email, message, type };
+    const fetchPromise = fetch(endpoint, {
+      method: 'POST',
+      mode: 'cors',
+      cache: 'no-cache',
+      body: JSON.stringify(data),
+    });
+    fetchPromise
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        toast.success('Your message sent successfully');
+        setLoading(false);
+        handlOpenModal(false);
+      });
+  };
+
   return (
     <div className="home" ref={homeRef}>
+      <ToastContainer />
       <div className="home__firstSection">
         {!firstLoad ? (
           <div className="home__animatedText">
@@ -97,7 +148,7 @@ function Home() {
         <Profile toggle={profileIsInViewport}></Profile>
       </div>
       <div className="home_forthSection" ref={commentsRef}>
-        <Comments toggle={commentsIsInViewport}></Comments>
+        <Comments handlOpenModal={handlOpenModal} toggle={commentsIsInViewport}></Comments>
       </div>
       <h1>Projects</h1>
       <div className="home_thirdSection" ref={projectsRef}>
@@ -106,6 +157,53 @@ function Home() {
       <div className="home__footer" ref={footerRef}>
         <Footer toggle={footerIsInViewport}></Footer>
       </div>
+
+      <Modal isOpen={isOpen} handleClose={() => handlOpenModal(false)}>
+        <ModalContent>
+          <form className="contact__project-form" action={endpoint} onSubmit={handleSubmit} method="POST">
+            <div className="contact__project-form__group">
+              <label htmlFor="fullName">Full Name *</label>
+              <input
+                type="text"
+                id="fullName"
+                placeholder=""
+                value={fullName}
+                onChange={(e) => setFullName(e.target.value)}
+              />
+            </div>
+            <div className="contact__project-form__group">
+              <label htmlFor="email">Email *</label>
+              <input
+                type="text"
+                id="email"
+                placeholder=""
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="contact__project-form__group">
+              <label htmlFor="type">Type of project *</label>
+              <input
+                type="text"
+                id="type"
+                placeholder=""
+                value={type}
+                onChange={(e) => setType(e.target.value)}
+              />
+            </div>
+            <div className="contact__project-form__group">
+              <label htmlFor="message">Send Message *</label>
+              <textarea
+                id="message"
+                placeholder="Text Here..."
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+              ></textarea>
+            </div>
+            <Button type="submit" loading={loading} text="Submit"></Button>
+          </form>
+        </ModalContent>
+      </Modal>
     </div>
   );
 }

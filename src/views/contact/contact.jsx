@@ -5,6 +5,7 @@ import firstImage from '../../assets/images/contact/contact1.png';
 import Footer from '../../components/footer/footer';
 import { useState, useRef } from 'react';
 import useIntersection from '../../custom-hooks/useIntersection';
+import { Button } from '@/components/button/button';
 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -43,9 +44,11 @@ export default function Contact() {
   const [email, setEmail] = useState('');
   const [type, setType] = useState('');
   const [message, setMessage] = useState('');
+  const [loading, setLoading] = useState(false);
   const endpoint = 'https://wk6cn3gzmkinqppdowvrz2dokq0xuzrf.lambda-url.us-west-2.on.aws/'; // Add this later
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     const data = { fullName, email, message, type };
     const fetchPromise = fetch(endpoint, {
       method: 'POST',
@@ -57,7 +60,8 @@ export default function Contact() {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        toast('Your message sent successfully');
+        setLoading(false);
+        toast.success('Your message sent successfully');
       });
   };
 
@@ -138,9 +142,7 @@ export default function Contact() {
                 onChange={(e) => setMessage(e.target.value)}
               ></textarea>
             </div>
-            <button type="submit" className="contact__project-form__button">
-              Submit
-            </button>
+            <Button type="submit" loading={loading} text="Submit"></Button>
           </form>
         </div>
         <div className={`contact__tab-content contact ${checkActive(1, 'active')}`}>

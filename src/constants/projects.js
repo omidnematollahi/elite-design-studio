@@ -332,6 +332,43 @@ import hillsideHouse9 from '@/assets/images/projects/interior-design/hillside-ho
 import hillsideHouse10 from '@/assets/images/projects/interior-design/hillside-house/10.png';
 import hillsideHouse11 from '@/assets/images/projects/interior-design/hillside-house/11.png';
 import hillsideHouse12 from '@/assets/images/projects/interior-design/hillside-house/12.png';
+import firstLandscape1 from '@/assets/images/projects/landscape/first/1.JPG';
+import firstLandscape2 from '@/assets/images/projects/landscape/first/2.JPG';
+import firstLandscape3 from '@/assets/images/projects/landscape/first/3.JPG';
+import firstLandscape4 from '@/assets/images/projects/landscape/first/4.JPG';
+import firstLandscape5 from '@/assets/images/projects/landscape/first/5.JPG';
+import secondLandscape1 from '@/assets/images/projects/landscape/second/1.JPG';
+import secondLandscape2 from '@/assets/images/projects/landscape/second/2.JPG';
+import secondLandscape3 from '@/assets/images/projects/landscape/second/3.JPG';
+import secondLandscape4 from '@/assets/images/projects/landscape/second/4.JPG';
+import secondLandscape5 from '@/assets/images/projects/landscape/second/5.JPG';
+import thirdLandscape1 from '@/assets/images/projects/landscape/third/1.JPG';
+import thirdLandscape2 from '@/assets/images/projects/landscape/third/2.JPG';
+import thirdLandscape3 from '@/assets/images/projects/landscape/third/3.JPG';
+import thirdLandscape4 from '@/assets/images/projects/landscape/third/4.JPG';
+import thirdLandscape5 from '@/assets/images/projects/landscape/third/5.JPG';
+import thirdLandscape6 from '@/assets/images/projects/landscape/third/6.JPG';
+import thirdLandscape7 from '@/assets/images/projects/landscape/third/7.JPG';
+import forthLandscape1 from '@/assets/images/projects/landscape/forth/1.JPG';
+import forthLandscape2 from '@/assets/images/projects/landscape/forth/2.JPG';
+import forthLandscape3 from '@/assets/images/projects/landscape/forth/3.JPG';
+import forthLandscape4 from '@/assets/images/projects/landscape/forth/4.JPG';
+import fifthLandscape1 from '@/assets/images/projects/landscape/fifth/1.JPG';
+import fifthLandscape2 from '@/assets/images/projects/landscape/fifth/2.JPG';
+import fifthLandscape3 from '@/assets/images/projects/landscape/fifth/3.JPG';
+import fifthLandscape4 from '@/assets/images/projects/landscape/fifth/4.JPG';
+import sixthLandscape1 from '@/assets/images/projects/landscape/sixth/1.JPG';
+import sixthLandscape2 from '@/assets/images/projects/landscape/sixth/2.JPG';
+import sixthLandscape3 from '@/assets/images/projects/landscape/sixth/3.JPG';
+import sixthLandscape4 from '@/assets/images/projects/landscape/sixth/4.JPG';
+import sixthLandscape5 from '@/assets/images/projects/landscape/sixth/5.JPG';
+import sixthLandscape6 from '@/assets/images/projects/landscape/sixth/6.JPG';
+import seventhLandscape1 from '@/assets/images/projects/landscape/seventh/1.JPG';
+import seventhLandscape2 from '@/assets/images/projects/landscape/seventh/2.JPG';
+import seventhLandscape3 from '@/assets/images/projects/landscape/seventh/3.JPG';
+import seventhLandscape4 from '@/assets/images/projects/landscape/seventh/4.JPG';
+import seventhLandscape5 from '@/assets/images/projects/landscape/seventh/5.JPG';
+import seventhLandscape6 from '@/assets/images/projects/landscape/seventh/6.JPG';
 
 export const PROJECT_LIST = [
   {
@@ -341,18 +378,23 @@ export const PROJECT_LIST = [
     images: [animalCareCenter1, animalCareCenter2, animalCareCenter3, animalCareCenter4, animalCareCenter5],
   },
   {
-    name: 'Animal Clinic',
-    id: 2,
-    category: 'commercial',
+    name: 'french bathroom',
+    id: 19,
+    category: 'interior',
     images: [
-      animalClinic1,
-      animalClinic2,
-      animalClinic3,
-      animalClinic4,
-      animalClinic5,
-      animalClinic6,
-      animalClinic7,
+      frenchBathroom1,
+      frenchBathroom2,
+      frenchBathroom3,
+      frenchBathroom4,
+      frenchBathroom5,
+      frenchBathroom6,
     ],
+  },
+  {
+    name: 'first landscape project',
+    id: 47,
+    category: 'landscape',
+    images: [firstLandscape1, firstLandscape2, firstLandscape3, firstLandscape4, firstLandscape5],
   },
   {
     name: 'Aram Commercial Building',
@@ -372,47 +414,10 @@ export const PROJECT_LIST = [
     ],
   },
   {
-    name: 'ARCTIC ELEVATION',
-    id: 4,
-    category: 'commercial',
-    images: [
-      arcticElevation1,
-      arcticElevation2,
-      arcticElevation3,
-      arcticElevation4,
-      arcticElevation5,
-      arcticElevation6,
-      arcticElevation7,
-      arcticElevation8,
-      arcticElevation9,
-      arcticElevation10,
-      arcticElevation11,
-      arcticElevation12,
-      arcticElevation13,
-      arcticElevation14,
-      arcticElevation15,
-      arcticElevation16,
-      arcticElevation17,
-      arcticElevation18,
-      arcticElevation19,
-      arcticElevation20,
-      arcticElevation21,
-    ],
-  },
-  {
-    name: 'Between Arcs',
-    id: 5,
-    category: 'commercial',
-    images: [
-      betweenArcs1,
-      betweenArcs2,
-      betweenArcs3,
-      betweenArcs4,
-      betweenArcs5,
-      betweenArcs6,
-      betweenArcs7,
-      betweenArcs8,
-    ],
+    name: 'enlish kitchen',
+    id: 40,
+    category: 'interior',
+    images: [englishKitchen1, englishKitchen2, englishKitchen3, englishKitchen4],
   },
   {
     name: 'Calm Office Lounge',
@@ -431,12 +436,6 @@ export const PROJECT_LIST = [
       calmOfficeLounge10,
       calmOfficeLounge11,
     ],
-  },
-  {
-    name: 'COZY ROOFTOP',
-    id: 7,
-    category: 'commercial',
-    images: [cozyRoofTop1, cozyRoofTop2, cozyRoofTop3, cozyRoofTop4, cozyRoofTop5],
   },
   {
     name: 'For Men',
@@ -461,52 +460,6 @@ export const PROJECT_LIST = [
     ],
   },
   {
-    name: 'Nature Calls',
-    id: 10,
-    category: 'commercial',
-    images: [natureCalls1, natureCalls2, natureCalls3, natureCalls4],
-  },
-  {
-    name: 'OCULUS',
-    id: 11,
-    category: 'commercial',
-    images: [OCULUS1, OCULUS2, OCULUS3, OCULUS4, OCULUS5, OCULUS6, OCULUS7, OCULUS8, OCULUS9, OCULUS10],
-  },
-  {
-    name: 'sweet July',
-    id: 12,
-    category: 'commercial',
-    images: [sweetJuly1, sweetJuly2, sweetJuly3, sweetJuly4, sweetJuly5, sweetJuly6, sweetJuly7],
-  },
-  {
-    name: 'XEELA',
-    id: 13,
-    category: 'commercial',
-    images: [
-      xeela1,
-      xeela2,
-      xeela3,
-      xeela4,
-      xeela5,
-      xeela6,
-      xeela7,
-      xeela8,
-      xeela9,
-      xeela10,
-      xeela11,
-      xeela12,
-      xeela13,
-      xeela14,
-      xeela15,
-      xeela16,
-      xeela17,
-      xeela18,
-      xeela19,
-      xeela20,
-      xeela21,
-    ],
-  },
-  {
     name: 'Black bathroom',
     id: 14,
     category: 'interior',
@@ -524,20 +477,24 @@ export const PROJECT_LIST = [
     ],
   },
   {
-    name: 'classic bathroom',
-    id: 15,
-    category: 'interior',
+    name: 'sweet July',
+    id: 12,
+    category: 'commercial',
+    images: [sweetJuly1, sweetJuly2, sweetJuly3, sweetJuly4, sweetJuly5, sweetJuly6, sweetJuly7],
+  },
+  {
+    name: 'Between Arcs',
+    id: 5,
+    category: 'commercial',
     images: [
-      blackBathroom1,
-      blackBathroom2,
-      blackBathroom3,
-      blackBathroom4,
-      blackBathroom5,
-      blackBathroom6,
-      blackBathroom7,
-      blackBathroom8,
-      blackBathroom9,
-      blackBathroom10,
+      betweenArcs1,
+      betweenArcs2,
+      betweenArcs3,
+      betweenArcs4,
+      betweenArcs5,
+      betweenArcs6,
+      betweenArcs7,
+      betweenArcs8,
     ],
   },
   {
@@ -553,6 +510,12 @@ export const PROJECT_LIST = [
       coolBathroom6,
       coolBathroom7,
     ],
+  },
+  {
+    name: 'OCULUS',
+    id: 11,
+    category: 'commercial',
+    images: [OCULUS1, OCULUS2, OCULUS3, OCULUS4, OCULUS5, OCULUS6, OCULUS7, OCULUS8, OCULUS9, OCULUS10],
   },
   {
     name: 'classic bathroom',
@@ -586,29 +549,67 @@ export const PROJECT_LIST = [
     ],
   },
   {
+    name: 'Nature Calls',
+    id: 10,
+    category: 'commercial',
+    images: [natureCalls1, natureCalls2, natureCalls3, natureCalls4],
+  },
+  {
+    name: 'classic bathroom',
+    id: 15,
+    category: 'interior',
+    images: [
+      blackBathroom1,
+      blackBathroom2,
+      blackBathroom3,
+      blackBathroom4,
+      blackBathroom5,
+      blackBathroom6,
+      blackBathroom7,
+      blackBathroom8,
+      blackBathroom9,
+      blackBathroom10,
+    ],
+  },
+  {
     name: 'flower bathroom',
     id: 18,
     category: 'interior',
     images: [flowerBathroom1, flowerBathroom2, flowerBathroom3],
   },
   {
-    name: 'french bathroom',
-    id: 19,
-    category: 'interior',
-    images: [
-      frenchBathroom1,
-      frenchBathroom2,
-      frenchBathroom3,
-      frenchBathroom4,
-      frenchBathroom5,
-      frenchBathroom6,
-    ],
-  },
-  {
     name: 'gold bathroom',
     id: 20,
     category: 'interior',
     images: [goldBathroom1, goldBathroom2, goldBathroom3, goldBathroom4, goldBathroom5],
+  },
+  {
+    name: 'XEELA',
+    id: 13,
+    category: 'commercial',
+    images: [
+      xeela1,
+      xeela2,
+      xeela3,
+      xeela4,
+      xeela5,
+      xeela6,
+      xeela7,
+      xeela8,
+      xeela9,
+      xeela10,
+      xeela11,
+      xeela12,
+      xeela13,
+      xeela14,
+      xeela15,
+      xeela16,
+      xeela17,
+      xeela18,
+      xeela19,
+      xeela20,
+      xeela21,
+    ],
   },
   {
     name: 'gray bathroom',
@@ -712,6 +713,19 @@ export const PROJECT_LIST = [
     images: [specialBedroom1, specialBedroom2, specialBedroom3, specialBedroom4, specialBedroom5],
   },
   {
+    name: 'seventh landscape project',
+    id: 53,
+    category: 'landscape',
+    images: [
+      seventhLandscape1,
+      seventhLandscape2,
+      seventhLandscape3,
+      seventhLandscape4,
+      seventhLandscape5,
+      seventhLandscape6,
+    ],
+  },
+  {
     name: 'first closet',
     id: 33,
     category: 'interior',
@@ -780,10 +794,10 @@ export const PROJECT_LIST = [
     images: [darkKitchen1, darkKitchen2, darkKitchen3],
   },
   {
-    name: 'enlish kitchen',
-    id: 40,
-    category: 'interior',
-    images: [englishKitchen1, englishKitchen2, englishKitchen3, englishKitchen4],
+    name: 'COZY ROOFTOP',
+    id: 7,
+    category: 'commercial',
+    images: [cozyRoofTop1, cozyRoofTop2, cozyRoofTop3, cozyRoofTop4, cozyRoofTop5],
   },
   {
     name: 'minimal kitchen',
@@ -818,6 +832,19 @@ export const PROJECT_LIST = [
       americanLiving8,
       americanLiving9,
       americanLiving10,
+    ],
+  },
+  {
+    name: 'sixth landscape project',
+    id: 52,
+    category: 'landscape',
+    images: [
+      sixthLandscape1,
+      sixthLandscape2,
+      sixthLandscape3,
+      sixthLandscape4,
+      sixthLandscape5,
+      sixthLandscape6,
     ],
   },
   {
@@ -861,6 +888,80 @@ export const PROJECT_LIST = [
       hillsideHouse11,
       hillsideHouse12,
     ],
+  },
+  {
+    name: 'ARCTIC ELEVATION',
+    id: 4,
+    category: 'commercial',
+    images: [
+      arcticElevation1,
+      arcticElevation2,
+      arcticElevation3,
+      arcticElevation4,
+      arcticElevation5,
+      arcticElevation6,
+      arcticElevation7,
+      arcticElevation8,
+      arcticElevation9,
+      arcticElevation10,
+      arcticElevation11,
+      arcticElevation12,
+      arcticElevation13,
+      arcticElevation14,
+      arcticElevation15,
+      arcticElevation16,
+      arcticElevation17,
+      arcticElevation18,
+      arcticElevation19,
+      arcticElevation20,
+      arcticElevation21,
+    ],
+  },
+  {
+    name: 'second landscape project',
+    id: 48,
+    category: 'landscape',
+    images: [secondLandscape1, secondLandscape2, secondLandscape3, secondLandscape4, secondLandscape5],
+  },
+  {
+    name: 'third landscape project',
+    id: 49,
+    category: 'landscape',
+    images: [
+      thirdLandscape1,
+      thirdLandscape2,
+      thirdLandscape3,
+      thirdLandscape4,
+      thirdLandscape5,
+      thirdLandscape6,
+      thirdLandscape7,
+    ],
+  },
+  {
+    name: 'forth landscape project',
+    id: 50,
+    category: 'landscape',
+    images: [forthLandscape1, forthLandscape2, forthLandscape3, forthLandscape4],
+  },
+  {
+    name: 'Animal Clinic',
+    id: 2,
+    category: 'commercial',
+    images: [
+      animalClinic1,
+      animalClinic2,
+      animalClinic3,
+      animalClinic4,
+      animalClinic5,
+      animalClinic6,
+      animalClinic7,
+    ],
+  },
+  {
+    name: 'fifth landscape project',
+    id: 51,
+    category: 'landscape',
+    images: [fifthLandscape1, fifthLandscape2, fifthLandscape3, fifthLandscape4],
   },
 ];
 

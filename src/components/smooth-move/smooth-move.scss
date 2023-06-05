@@ -1,3 +1,5 @@
+@import '../../assets/scss/media.scss';
+
 .content {
   position: absolute;
   top: 50%;
@@ -31,6 +33,17 @@
       animation: move 2s forwards;
     }
 
+    @include breakpoint(small) {
+      -webkit-animation-name: mobilechange2;
+      -webkit-animation-duration: 1s;
+      animation-name: mobilechange2;
+
+      &.move {
+        -webkit-animation: mobilemove 2s forwards;
+        animation: mobilemove 2s forwards;
+      }
+    }
+
     img {
       width: 100%;
     }
@@ -41,6 +54,10 @@
     overflow: hidden;
     height: 80px;
     position: relative;
+
+    @include breakpoint(small) {
+      font-size: 18px !important;
+    }
 
     &__section1 {
       height: 40px;
@@ -83,6 +100,10 @@
       padding-left: 270px;
       text-align: left;
       list-style: none;
+
+      @include breakpoint(small) {
+        padding-left: 140px;
+      }
 
       -webkit-animation-name: change;
       -webkit-animation-duration: 5s;
@@ -169,10 +190,33 @@
   }
 }
 
+@keyframes mobilechange2 {
+  0% {
+    top: 110%;
+  }
+
+  100% {
+    top: 80%;
+  }
+}
+
 @keyframes move {
   0% {
     width: 100%;
     top: 30%;
+  }
+
+  100% {
+    width: 10rem;
+    top: 0;
+    left: 2rem;
+  }
+}
+
+@keyframes mobilemove {
+  0% {
+    width: 100%;
+    top: 80%;
   }
 
   100% {

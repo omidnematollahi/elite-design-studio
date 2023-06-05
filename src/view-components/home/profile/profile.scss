@@ -8,12 +8,13 @@
 
 .profile {
     // margin-top: 5rem;
-    height: 100vh;
+    // height: 100vh;
     display: flex;
     align-items: center;
 
     @include breakpoint(small) {
-        margin-top: 22rem;
+        padding: 2rem 0;
+        // margin-top: 22rem;
     }
 
     .container {

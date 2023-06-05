@@ -42,13 +42,13 @@
         }
 
         &.active {
-            -webkit-animation: zoom-a 3s linear infinite alternate;
-            /* Safari 4+ */
-            -moz-animation: zoom-a 3s linear infinite alternate;
-            /* Fx 5+ */
-            -o-animation: zoom-a 3s linear infinite alternate;
-            /* Opera 12+ */
-            animation: zoom-a 3s linear infinite alternate;
+            // -webkit-animation: zoom-a 3s linear infinite alternate;
+            // /* Safari 4+ */
+            // -moz-animation: zoom-a 3s linear infinite alternate;
+            // /* Fx 5+ */
+            // -o-animation: zoom-a 3s linear infinite alternate;
+            // /* Opera 12+ */
+            // animation: zoom-a 3s linear infinite alternate;
             /* IE 10+, Fx 29+ */
             justify-content: center;
             align-items: center;

@@ -1,4 +1,4 @@
-@import url('../../assets/scss/media.scss');
+@import '../../assets/scss/media.scss';
 
 .home {
     height: 100%;
@@ -12,6 +12,10 @@
 
     &__mock {
         min-height: 5rem;
+
+        @include breakpoint(small) {
+            display: none;
+        }
     }
 
     &__secondSection {

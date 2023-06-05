@@ -2,10 +2,14 @@ import './App.scss';
 import React, { useState, useEffect } from 'react';
 import Header from './components/header/header';
 import SideBar from './components/sidebar/sidebar';
-import About from './views/about/about';
-import Contact from './views/contact/contact';
+// import About from './views/about/about';
+import About from './components/sidebar/sidebar-views/about';
+// import Contact from './views/contact/contact';
+import Contact from './components/sidebar/sidebar-views/contact';
 import Projects from './views/projects/projects';
-import Services from './views/services/services';
+// import Projects from './components/sidebar/sidebar-views/projects';
+// import Services from './views/services/services';
+import Services from './components/sidebar/sidebar-views/services';
 import { Outlet, useNavigate } from 'react-router-dom';
 import Footer from './components/footer/footer';
 import ScrollToTop from './utils/scrollToTop';
@@ -81,9 +85,7 @@ function App() {
     setSideBarFlag(sidebarVisibility);
   };
 
-  const animationStart = (aa) => {
-    console.log(aa);
-  };
+  const animationStart = (aa) => {};
 
   const animationEnd = (targetRoute, animationEndFlag, idx) => {
     navigate(targetRoute);

@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { motion, AnimatePresence } from 'framer-motion';
+import { isMobile } from 'react-device-detect';
 
 const Overlay = styled(motion.div)`
   position: fixed;
@@ -11,8 +12,9 @@ const Overlay = styled(motion.div)`
   background: rgba(0, 0, 0, 0.3);
   z-index: 9999;
 `;
+console.log(isMobile);
 const ModalContainer = styled(motion.div)`
-  width: 65%;
+  width: ${isMobile ? '100%' : '65%'};
   height: 90%;
   background-color: white;
   position: absolute;

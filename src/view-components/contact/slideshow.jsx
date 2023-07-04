@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { isMobile } from 'react-device-detect';
+
 import './slideshow.scss';
 
 export default function Slideshow({ slides, delay, dots = true, textAnimation = false }) {
@@ -60,6 +62,20 @@ export default function Slideshow({ slides, delay, dots = true, textAnimation = 
       <div className="slideshow__slider" ref={sliderRef}>
         <div className="slideshow__backdrop" ref={backdropRef}></div>
         {slides.map((slide, idx) => (
+          isMobile ? 
+          <div
+            className={`slideshow__slide ${index === idx ? ' active' : ''}`}
+            key={idx}
+            style={{
+              backgroundImage: `url(${slide.image})`,
+              display: `${index === idx ? 'flex' : 'none'}`,
+            }}
+          >
+            <h1 className={`${textAnimation ? 'animate__animated animate__slideInLeft' : ''}`}>
+              {slide.content}
+            </h1>
+          </div>
+          : 
           <div
             className={`slideshow__slide ${index === idx ? ' active' : ''}`}
             key={idx}

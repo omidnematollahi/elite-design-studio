@@ -36,6 +36,13 @@
         background-repeat: no-repeat;
         z-index: -2;
 
+        
+        @include breakpoint(small) {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
         span {
             max-width: 60%;
             font-size: 1.5rem;
@@ -56,6 +63,11 @@
 
             @include breakpoint(small) {
                 animation: none;
+
+                >div {
+                    width: 100%;
+                    height: 100%;
+                }
             }
         }
 
@@ -64,14 +76,23 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            // z-index: -2;
-            position: fixed;
+            z-index: -2;
+            position: absolute;
             top: 0;
         }
 
-        >h1 {
+        h1 {
             max-width: 40ch;
             font-size: calc(1rem + 2vw) !important;
+
+            
+            @include breakpoint(small) {
+                z-index: 9999;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 100%;
+            }
         }
     }
 

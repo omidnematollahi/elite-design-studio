@@ -12,7 +12,6 @@ const Overlay = styled(motion.div)`
   background: rgba(0, 0, 0, 0.3);
   z-index: 9999;
 `;
-console.log(isMobile);
 const ModalContainer = styled(motion.div)`
   width: ${isMobile ? '100%' : '65%'};
   height: 90%;

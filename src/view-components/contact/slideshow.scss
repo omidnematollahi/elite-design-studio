@@ -87,7 +87,7 @@
 
             
             @include breakpoint(small) {
-                z-index: 9999;
+                z-index: 1;
                 position: absolute;
                 top: 50%;
                 left: 0;

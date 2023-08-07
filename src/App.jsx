@@ -131,9 +131,6 @@ function App() {
             <div className="wrapper">
               <Outlet />
             </div>
-            {/* <div className="home__footer">
-              <Footer></Footer>
-            </div> */}
           </div>
         </>
       ) : (

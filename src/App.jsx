@@ -82,7 +82,7 @@ function App() {
       });
       return newArray;
     });
-    setSideBarFlag(sidebarVisibility);
+    // setSideBarFlag(sidebarVisibility);
   };
 
   const animationStart = (aa) => {};

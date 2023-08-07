@@ -10,7 +10,9 @@ export default function SideBar({
   animationStart,
 }) {
   const [sidebarVisibility, setSidebarVisibility] = useState(false);
+  const [closeExceptionItem, setCloseExceptionItem] = useState(null);
   const [expanded, setExpanded] = useState(false);
+  const [isFirstLoad, setIsFirstLoad] = useState(true);
   const sidebarRef = useRef(null);
   const currentRoute = location.pathname;
 
@@ -42,12 +44,19 @@ export default function SideBar({
   const onMenuItemClick = (idx) => {
     animationStart(false);
     onRouteChange(idx, sidebarVisibility);
+    setCloseExceptionItem(idx);
     setSidebarVisibility(false);
     trackSideBarVisibility(false);
     setTimeout(() => {
       animationEnd(items[idx].path, true, idx);
     }, 1000);
   };
+
+  useEffect(() => {
+    if (sidebarVisibility && isFirstLoad) {
+      setIsFirstLoad(false);
+    }
+  }, [sidebarVisibility])
 
   return (
     <div className="sidebar" ref={sidebarRef}>
@@ -56,7 +65,7 @@ export default function SideBar({
           <div
             key={menuItem.name + '' + idx}
             className={`sidebar__item colored-sidebar${idx + 1} 
-            ${sidebarVisibility && !menuItem.expand ? 'open' : ''} ${menuItem.expand ? 'expand' : ''} ${
+            ${menuItem.expand ? 'expand' : ''} ${sidebarVisibility && !menuItem.expand ? 'open' : !sidebarVisibility && !isFirstLoad && !menuItem.expand && idx !== closeExceptionItem ? 'close' : ''} ${
               menuItem.noAnimation ? 'noAnimation' : ''
             }`}
             onClick={() => onMenuItemClick(idx)}

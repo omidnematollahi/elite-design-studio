@@ -12,12 +12,11 @@ import { Footer } from '../../components/footer/footer';
 import { Comments } from '../../view-components/home/comments/comments';
 import Modal from '@/components/modal/modal';
 import SlideShow from '@/view-components/contact/slideshow';
-import firstImage from '@/assets/images/1.jpg';
-import secondImage from '@/assets/images/2.png';
-import thirdImage from '@/assets/images/3.jpg';
-import forthImage from '@/assets/images/4.jpg';
-import fifthImage from '@/assets/images/5.jpg';
-import { isMobile } from 'react-device-detect';
+import firstImage from '@/assets/images/1.jpeg';
+import secondImage from '@/assets/images/2.jpeg';
+import thirdImage from '@/assets/images/3.jpeg';
+import forthImage from '@/assets/images/4.jpeg';
+import fifthImage from '@/assets/images/5.jpeg';
 
 const ModalContent = styled.div`
   height: 100%;

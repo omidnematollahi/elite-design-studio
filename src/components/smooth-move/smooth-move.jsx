@@ -19,13 +19,13 @@ export default function SmoothMove() {
             <p className="content__container__text">Fundamental Of</p>
 
             <ul className="content__container__list">
-              <li className="first-section__container__list__item">Shaping your Kitchen</li>
-              <li className="first-section__container__list__item">Bathroom</li>
-              <li className="first-section__container__list__item">Closet</li>
-              <li className="first-section__container__list__item">House</li>
-              <li className="first-section__container__list__item">Office</li>
-              <li className="first-section__container__list__item">Dream</li>
-              <li className="first-section__container__list__item">Life</li>
+              <li className="content__container__list__item">Shaping your Kitchen</li>
+              <li className="content__container__list__item">Bathroom</li>
+              <li className="content__container__list__item">Closet</li>
+              <li className="content__container__list__item">House</li>
+              <li className="content__container__list__item">Office</li>
+              <li className="content__container__list__item">Dream</li>
+              <li className="content__container__list__item">Life</li>
             </ul>
           </div>
           <div className="content__wrapper__section2">
